@@ -1,0 +1,24 @@
+<h1><%= _('Edit voting') %></h1>
+<%= semantic_form_for(@voting, url: update_voting_path(@voting.id), authenticity_token: true) do |f| %>
+	<%= render partial: 'layouts/form_guide' %>
+	<%= f.semantic_errors :voting %>
+	<%= f.input :text %>
+	<%= f.input :anonymous, as: :boolean %>
+	<%= f.input :voting_type, as: :select, collection: options_from_collection_for_select(Voting.voting_types, :first, :first, @voting.voting_type.to_s) %>
+	<%= f.submit _('Save') %>
+<% end %>
+
+<h2><%= _('Voting|Options') %></h2>
+
+<%= semantic_form_for(@voting_option, url: create_voting_option_path(@voting.id), authenticity_token: true) do |f| %>
+	<%= render partial: 'layouts/form_guide' %>
+	<%= f.semantic_errors :voting_option %>
+	<%= f.input :text %>
+	<%= f.submit _('Save') %>
+<% end %>
+
+<div class="list-group">
+<%= render partial: 'option', collection: @voting.voting_options %>
+</div>
+
+<%= link_to _('Back to meeting'), manage_meeting_path() %>

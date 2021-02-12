@@ -1,0 +1,9 @@
+<h1><%= _('Create a new voting') %></h1>
+<%= semantic_form_for(@voting, url: create_voting_path(), authenticity_token: true) do |f| %>
+	<%= render partial: 'layouts/form_guide' %>
+	<%= f.semantic_errors :voting %>
+	<%= f.input :text %>
+	<%= f.input :anonymous, as: :boolean %>
+	<%= f.input :voting_type, as: :select, collection: options_from_collection_for_select(Voting.voting_types, :first, :first, @voting.voting_type.to_s) %>
+	<%= f.submit _('Save') %>
+<% end %>

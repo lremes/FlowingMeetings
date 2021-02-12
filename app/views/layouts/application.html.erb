@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FlowingMeetings</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+  	<%= stylesheet_link_tag 'application', media: 'screen', 'data-turbolinks-track' => true %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="<%= controller_name %>">
+      <div id="layout" class="<%= controller_name%> <%= action_name %>">
+        <%= render :partial => 'layouts/header' %>
+        <div class="d-flex justify-content-center">
+          <div class="content">
+          <%= yield %>
+          </div>
+        </div>
+
+        <%= render :partial => '/layouts/footer' %>
+      </div>
+  </body>
+</html>

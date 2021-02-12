@@ -1,0 +1,22 @@
+<h1><%= _('Manage meeting') %></h1>
+<%= semantic_form_for(@meeting, url: update_meeting_path(@meeting.id), authenticity_token: true) do |f| %>
+	<%= render partial: 'layouts/form_guide' %>
+	<%= f.semantic_errors :meeting %>
+	<%= f.input :name %>
+	<%= f.input :start_time, as: :datetime_picker %>
+	<%= f.input :passcode, as: :string, :input_html => { :disabled => true } %>
+	<%= f.input :admin_password, as: :string, :input_html => { :disabled => true } %>
+	<%= f.submit _('Save') %>
+<% end %>
+
+
+<h2><%= _('Participants') %></h2>
+<ul class="list-group">
+<%= render partial: 'participant', collection: @meeting.participants %>
+</ul>
+
+<h2><%= _('Votings') %></h2>
+<%= link_to _('Add new voting'), new_voting_path() %>
+<ul class="list-group">
+<%= render partial: 'voting', collection: @meeting.votings %>
+</ul>

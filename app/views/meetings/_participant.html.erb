@@ -1,0 +1,22 @@
+<li class="list-group-item p-0">
+    <div class="card-header">
+        <div class="caret d-flex justify-content-between" data-target="#participant-<%= participant.id %>" data-toggle="collapse" aria-expanded="false" role="button" title="<%= _('Click to expand/collapse') %>">
+            <div class="mr-auto"><%= sanitize participant.name %></div>
+            <div><%= sanitize participant.token %></div>
+            <div>
+            <%= form_tag update_participant_path(participant.id), remote: true, method: :patch do %>
+            <%= _('Votes') %>
+            <%= number_field_tag 'participant[num_votes]', participant.num_votes %>
+            <%= submit_tag _('save') %>
+            <% end %>
+            </div>
+            <div class="actions">
+            <% unless participant.permitted? %>
+            <%= link_to fa_icon('play'), permit_participant_path(participant.id) %>
+            <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="card-body collapse" id="participant-<%= participant.id -%>">
+    </div>
+</li>

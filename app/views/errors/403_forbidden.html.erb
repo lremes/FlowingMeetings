@@ -1,0 +1,9 @@
+<section class="primary">
+
+<h1><%= _('Errors|Forbidden') %></h1>
+<p><%= _('You do not have permission access the requested page or feature.') %></p>
+
+<% if @debug_info.present? %>
+<p><%= @debug_info[0] %></p>
+<% end %>
+</section>

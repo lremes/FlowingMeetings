@@ -1,0 +1,91 @@
+/* SCSS variable definitions */
+$body-color: #222222;
+$background-color: #fff;
+$default-lineheight: 1rem;
+$layout-width: 934px;
+
+$color-error: #ff0000;
+
+$color-grey1: #dddddd;
+$color-grey2: #f0f0f0;
+$color-grey3: #aaa;
+$color-grey4: #444;
+
+$color-row: #f6f6f6;
+
+$color-green1: #17B403;
+$color-green2: #a8ba66; 
+$color-green3: #9dce01;
+$color-green4: #9dce01;
+$color-green5: #cce141;
+$color-green6: #003300;
+
+$color-red1: #f15a88;
+
+$color-yellow1: #e4a160;
+$color-yellow2: #ffe0b3;
+$color-yellow3: #ffff00;
+
+$color-blue1: #13577F;
+$color-blue2: #296CAA;
+$color-blue3: #00b2fe;
+$color-blue4: #004882;
+$color-blue5: #99ccff;
+
+$popup-form-max-width: 940px;
+
+@mixin border-radius($radius) {
+	-moz-border-radius:		$radius;
+	-webkit-border-radius:	$radius;
+	-khtml-border-radius:	$radius;
+	border-radius:			$radius;
+}
+
+@mixin border-bottom-left-radius($radius) {
+	-moz-border-bottom-left-radius:		$radius;
+	-webkit-border-bottom-left-radius:	$radius;
+	-khtml-border-bottom-left-radius:	$radius;
+	border-bottom-left-radius:			$radius;
+}
+
+@mixin border-bottom-right-radius($radius) {
+	-moz-border-bottom-right-radius:	$radius;
+	-webkit-border-bottom-right-radius:	$radius;
+	-khtml-border-bottom-right-radius:	$radius;
+	border-bottom-right-radius:			$radius;
+}
+
+@mixin border-bottom-radius($radius) {
+@include border-bottom-left-radius($radius);
+@include border-bottom-right-radius($radius);
+}
+
+@mixin box-shadow($h, $w, $b) {
+	-webkit-box-shadow: $h $w $b rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: $h $w $b rgba(0, 0, 0, 0.2);
+	box-shadow: $h $w $b rgba(0, 0, 0, 0.2);
+}
+
+@mixin background-clip($type) {
+	-webkit-background-clip: $type;
+	-moz-background-clip: $type;
+	background-clip: $type;
+}
+
+$media-phone: "only screen and (max-width : 320px)";
+$media-smartphone: "only screen and (max-width : 480px)";
+$media-tablet: "only screen and (max-width : 1024px)";
+$media-laptop: "only screen and (max-width : 1440px)";
+$media-desktop: "only screen and (min-width : 1440px)";
+$media-narrow-screen: "only screen and (max-width: 730px)";
+
+$req_list_width: 100%;
+$req_details_width: 100% - $req_list_width;
+
+$req_src_list_width: 50%;
+$req_src_details_width: 100% - $req_src_list_width;
+
+$management_list_width: 30%;
+$management_details_width: 100% - $management_list_width;
+
+$list-row-hover-color: $color-grey2;

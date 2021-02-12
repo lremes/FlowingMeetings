@@ -1,0 +1,6 @@
+<%= form_with url: identify_participant_path() do |form| %>
+  <%= form.label :name, _('Please enter the name you would like to show in the meeting participant list.') %>
+  <%= form.text_field :name%>
+
+<%= submit_tag _('Next') %>  
+<% end %>

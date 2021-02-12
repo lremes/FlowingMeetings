@@ -1,0 +1,13 @@
+<h1><%= _('Join a meeting') %></h1>
+<%= form_with url: enter_meeting_path() do |form| %>
+  <% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+  <% end %>
+  <%= form.label :meeting_code, _('Please enter meeting code') %>
+  <%= form.text_field :meeting_code %>
+<%= submit_tag _('Join meeting') %>  
+<% end %>
+
+<%= link_to _('Create a new meeting'), new_meeting_path() %>

@@ -1,0 +1,8 @@
+<h1><%= _('Create a new meeting') %></h1>
+<%= semantic_form_for(@meeting, url: create_meeting_path(), authenticity_token: true) do |f| %>
+	<%= render partial: 'layouts/form_guide' %>
+	<%= f.semantic_errors :meeting %>
+	<%= f.input :name %>
+	<%= f.input :start_time, as: :datetime_picker %>
+	<%= f.submit _('Save') %>
+<% end %>

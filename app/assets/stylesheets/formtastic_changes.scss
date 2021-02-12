@@ -1,0 +1,139 @@
+@import 'variables';
+
+.formtastic {
+	margin-bottom: 0.5em;
+
+	.caret {
+		font-size: 1.1rem;
+	}
+
+	.form_guide {
+		background-color: $color-blue2;
+		color: white;
+		padding: 0.5em 0.5em;
+		margin-bottom: 0.5em;
+		font-size: 90%;
+	}
+	.input {
+		list-style: none;
+		margin-bottom: 0 !important;
+
+		legend {
+			font-size: 100% !important;
+		}
+
+		.label {
+			display: inline-block !important;
+			vertical-align: top;
+		}
+
+		input[type="number"] {
+			width: auto;
+		}
+
+		input[type="text"] {
+			padding: 0.25rem;
+		}
+
+		.tox-tinymce {
+			float: right;
+		}
+
+		abbr {
+			text-decoration: none !important;
+			cursor: default !important;
+		}
+	}
+	.date_picker {
+		// based on "päättymispäivä*"
+		.label {
+			min-width: 120px !important;
+		}
+	}
+	
+	ul.bullets {
+		margin: 0.5em 0.5em 0.5em 2em;
+		list-style: circle;
+	}
+
+	input,textarea,select {
+		font: normal 100%/1.8 'nexa_lightregular', sans-serif;
+	}
+	
+	.boolean {
+		width: 100%;
+	}
+	
+	.actions {
+		width: 100%;
+		padding-left: 0px !important;
+		
+	}
+
+	li.input {
+		margin-left: 0.5em;
+		margin-bottom: 0.75em;
+	}
+	
+	#requirement_source_new_description_input {
+		display: flex;
+		> div {
+			width: 72%;
+		}
+	}
+
+	fieldset.inputs {
+		margin: 0;
+		li {
+			margin: 0;
+			label {
+				width: 15%;
+			}
+			input {
+				width: 82%
+			}
+		}
+	}
+	
+	#amendment_dispatch_note_text_input {
+		> div {
+			width: 72%;
+		}
+	}
+
+	input[type=submit], input[type=button], .submit, .button {
+		border: 0;
+		background: #13577F;
+		color: #fff;
+		height: 30px;
+		margin-top: 0;
+		padding: 0;
+		cursor: pointer;
+		transition: .3s;
+		font-size: .9em;
+		box-sizing: border-box;
+		padding: 0 1em;
+		width: auto;
+		box-shadow: none;
+		border-radius: 3px;
+	}
+	
+	input[type=submit]:hover, input[type=button]:hover, .submit:hover, .button:hover {
+		background: #1a75ab
+	}
+	
+	p.inline-hints {
+		padding: 0;
+		margin: 0 0 0 25% !important;
+	}
+
+	label[for="expand-advanced"] {
+		display: block;
+		margin-bottom: 0.5em;
+	}
+
+	.select2 {
+		max-width: '100%' !important;
+	}
+
+}
