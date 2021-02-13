@@ -117,4 +117,10 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  i18n_config = JSON.parse(ENV.fetch('FLOWINGMEETINGS_I18N_JSON','{ "available": [ "fi","en" ], "default": "en", "fallbacks": { "fi": "en" } }'))
+
+  config.i18n.available_locales = i18n_config['available']
+	config.i18n.default_locale = i18n_config['default']
+	config.i18n.fallbacks = [ I18n.default_locale, i18n_config['fallbacks']  ]
 end

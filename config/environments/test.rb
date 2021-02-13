@@ -57,4 +57,10 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+
+  i18n_config = JSON.parse(ENV.fetch('FLOWINGMEETINGS_I18N_JSON','{ "available": [ "fi","en" ], "default": "en", "fallbacks": { "fi": "en" } }'))
+
+  config.i18n.available_locales = i18n_config['available']
+	config.i18n.default_locale = i18n_config['default']
+	config.i18n.fallbacks = [ I18n.default_locale, i18n_config['fallbacks']  ]
 end

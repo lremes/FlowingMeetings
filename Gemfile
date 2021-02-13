@@ -32,6 +32,7 @@ gem 'bootstrap', '~> 4.4.1'
 
 gem "gettext_i18n_rails"
 gem 'gettext'
+gem 'i18n_data'
 
 gem 'formtastic', '~> 3.0'
 gem 'font_awesome5_rails'

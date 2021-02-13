@@ -1,0 +1,457 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: app 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-13 21:16+0200\n"
+"PO-Revision-Date: 2021-02-13 21:16+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "Add new voting"
+msgstr ""
+
+msgid "Anonymous"
+msgstr ""
+
+msgid "Are you sure you want to delete the voting?"
+msgstr ""
+
+msgid "Back to meeting"
+msgstr ""
+
+msgid "Ballot"
+msgstr ""
+
+msgid "Ballots"
+msgstr ""
+
+msgid "Ballot|Participant"
+msgstr ""
+
+msgid "Ballot|Participant|hint"
+msgstr ""
+
+msgid "Ballot|Submitted"
+msgstr ""
+
+msgid "Ballot|Submitted|hint"
+msgstr ""
+
+msgid "Ballot|Voting"
+msgstr ""
+
+msgid "Ballot|Voting|hint"
+msgstr ""
+
+msgid "Cast ballots"
+msgstr ""
+
+msgid "Click to expand/collapse"
+msgstr ""
+
+msgid "Create a new meeting"
+msgstr ""
+
+msgid "Create a new voting"
+msgstr ""
+
+msgid "Edit voting"
+msgstr ""
+
+msgid "Enter participant information"
+msgstr ""
+
+msgid "Errors|Forbidden"
+msgstr ""
+
+msgid "Errors|Unauthorized"
+msgstr ""
+
+msgid "Errors|not_found"
+msgstr ""
+
+msgid "Failed to create meeting."
+msgstr ""
+
+msgid "Failed to create voting."
+msgstr ""
+
+msgid "Failed to join meeting."
+msgstr ""
+
+msgid "Failed to show cast votes."
+msgstr ""
+
+msgid "Fields with an asterisk (*) are mandatory"
+msgstr ""
+
+msgid "Forbidden"
+msgstr ""
+
+msgid "Identify participant"
+msgstr ""
+
+msgid "Identify yourself to the meeting organiser by passing this code to them for validation: %{code}"
+msgstr ""
+
+msgid "Internal server error"
+msgstr ""
+
+msgid "Invalid meeting code"
+msgstr ""
+
+msgid "Join a meeting"
+msgstr ""
+
+msgid "Join meeting"
+msgstr ""
+
+msgid "Leave meeting"
+msgstr ""
+
+msgid "Left the meeting at %{time}"
+msgstr ""
+
+msgid "Manage meeting"
+msgstr ""
+
+msgid "Meeting"
+msgstr ""
+
+msgid "Meetings"
+msgstr ""
+
+msgid "Meeting|Active voting"
+msgstr ""
+
+msgid "Meeting|Active voting|hint"
+msgstr ""
+
+msgid "Meeting|Admin password"
+msgstr ""
+
+msgid "Meeting|Admin password|hint"
+msgstr ""
+
+msgid "Meeting|Meeting information"
+msgstr ""
+
+msgid "Meeting|Meeting information|hint"
+msgstr ""
+
+msgid "Meeting|Name"
+msgstr ""
+
+msgid "Meeting|Name|hint"
+msgstr ""
+
+msgid "Meeting|Passcode"
+msgstr ""
+
+msgid "Meeting|Passcode|hint"
+msgstr ""
+
+msgid "Meeting|Retention time days"
+msgstr ""
+
+msgid "Meeting|Retention time days|hint"
+msgstr ""
+
+msgid "Meeting|Start time"
+msgstr ""
+
+msgid "Meeting|Start time|hint"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "No voting in progress."
+msgstr ""
+
+msgid "Not found"
+msgstr ""
+
+msgid "Number of votes"
+msgstr ""
+
+msgid "Oops! You found a bug!"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "PageTitle|action_mailbox/ingresses/mailgun/inbound_emails"
+msgstr ""
+
+msgid "PageTitle|action_mailbox/ingresses/mandrill/inbound_emails"
+msgstr ""
+
+msgid "PageTitle|action_mailbox/ingresses/postmark/inbound_emails"
+msgstr ""
+
+msgid "PageTitle|action_mailbox/ingresses/relay/inbound_emails"
+msgstr ""
+
+msgid "PageTitle|action_mailbox/ingresses/sendgrid/inbound_emails"
+msgstr ""
+
+msgid "PageTitle|active_storage/blobs/proxy"
+msgstr ""
+
+msgid "PageTitle|active_storage/blobs/redirect"
+msgstr ""
+
+msgid "PageTitle|active_storage/direct_uploads"
+msgstr ""
+
+msgid "PageTitle|active_storage/disk"
+msgstr ""
+
+msgid "PageTitle|active_storage/representations/proxy"
+msgstr ""
+
+msgid "PageTitle|active_storage/representations/redirect"
+msgstr ""
+
+msgid "PageTitle|errors"
+msgstr ""
+
+msgid "PageTitle|health_check/health_check"
+msgstr ""
+
+msgid "PageTitle|meetings"
+msgstr ""
+
+msgid "PageTitle|rails/conductor/action_mailbox/inbound_emails"
+msgstr ""
+
+msgid "PageTitle|rails/conductor/action_mailbox/inbound_emails/sources"
+msgstr ""
+
+msgid "PageTitle|rails/conductor/action_mailbox/reroutes"
+msgstr ""
+
+msgid "PageTitle|rails/info"
+msgstr ""
+
+msgid "PageTitle|rails/mailers"
+msgstr ""
+
+msgid "PageTitle|rails/welcome"
+msgstr ""
+
+msgid "PageTitle|votings"
+msgstr ""
+
+msgid "Participant"
+msgstr ""
+
+msgid "Participants"
+msgstr ""
+
+msgid "Participant|Meeting"
+msgstr ""
+
+msgid "Participant|Meeting|hint"
+msgstr ""
+
+msgid "Participant|Name"
+msgstr ""
+
+msgid "Participant|Name|hint"
+msgstr ""
+
+msgid "Participant|Num votes"
+msgstr ""
+
+msgid "Participant|Num votes|hint"
+msgstr ""
+
+msgid "Participant|Permitted"
+msgstr ""
+
+msgid "Participant|Permitted|hint"
+msgstr ""
+
+msgid "Participant|Time of leaving"
+msgstr ""
+
+msgid "Participant|Time of leaving|hint"
+msgstr ""
+
+msgid "Participant|Token"
+msgstr ""
+
+msgid "Participant|Token|hint"
+msgstr ""
+
+msgid "Please enter meeting code"
+msgstr ""
+
+msgid "Please enter the name you would like to show in the meeting participant list."
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Submit vote"
+msgstr ""
+
+msgid "Submitted votes"
+msgstr ""
+
+msgid "The page you are looking for does not exist. Please check the URL."
+msgstr ""
+
+msgid "Unauthorized"
+msgstr ""
+
+msgid "Vote"
+msgstr ""
+
+msgid "Votes"
+msgstr ""
+
+msgid "VotesVotingOption"
+msgstr ""
+
+msgid "VotesVotingOptions"
+msgstr ""
+
+msgid "VotesVotingOption|Vote"
+msgstr ""
+
+msgid "VotesVotingOption|Vote|hint"
+msgstr ""
+
+msgid "VotesVotingOption|Voting option"
+msgstr ""
+
+msgid "VotesVotingOption|Voting option|hint"
+msgstr ""
+
+msgid "Vote|Amount"
+msgstr ""
+
+msgid "Vote|Amount|hint"
+msgstr ""
+
+msgid "Vote|Ballot"
+msgstr ""
+
+msgid "Vote|Ballot|hint"
+msgstr ""
+
+msgid "Vote|Voting"
+msgstr ""
+
+msgid "Vote|Voting|hint"
+msgstr ""
+
+msgid "Voting"
+msgstr ""
+
+msgid "Voting in progress."
+msgstr ""
+
+msgid "Voting is not active."
+msgstr ""
+
+msgid "VotingOption"
+msgstr ""
+
+msgid "VotingOptions"
+msgstr ""
+
+msgid "VotingOption|Text"
+msgstr ""
+
+msgid "VotingOption|Text|hint"
+msgstr ""
+
+msgid "VotingOption|Voting"
+msgstr ""
+
+msgid "VotingOption|Voting|hint"
+msgstr ""
+
+msgid "Votings"
+msgstr ""
+
+msgid "Voting|Anonymous"
+msgstr ""
+
+msgid "Voting|Anonymous|hint"
+msgstr ""
+
+msgid "Voting|End time"
+msgstr ""
+
+msgid "Voting|End time|hint"
+msgstr ""
+
+msgid "Voting|Meeting"
+msgstr ""
+
+msgid "Voting|Meeting|hint"
+msgstr ""
+
+msgid "Voting|Options"
+msgstr ""
+
+msgid "Voting|Start time"
+msgstr ""
+
+msgid "Voting|Start time|hint"
+msgstr ""
+
+msgid "Voting|Text"
+msgstr ""
+
+msgid "Voting|Text|hint"
+msgstr ""
+
+msgid "Voting|Voting type"
+msgstr ""
+
+msgid "Voting|Voting type|hint"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "You are not allowed to participate in this vote."
+msgstr ""
+
+msgid "You are not authorized to access the requested page or feature."
+msgstr ""
+
+msgid "You do not have permission access the requested page or feature."
+msgstr ""
+
+msgid "You have already submitted your vote."
+msgstr ""
+
+msgid "You have already voted. Please waith for voting to end."
+msgstr ""
+
+msgid "You have left the meeting."
+msgstr ""
+
+msgid "save"
+msgstr ""

@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
 	include ActionView::Helpers::JavaScriptHelper
 
+	before_action :set_locale
+	
     def locale
 		(current_user.locale if current_user) || params[:locale] || session[:locale] || I18n.default_locale
 	end
@@ -47,5 +49,20 @@ class ApplicationController < ActionController::Base
 			return resp.to_json
 		end
 		resp
+	end
+
+	private
+
+	def locale
+		params[:locale] || session[:locale] || I18n.default_locale
+	end
+
+	def set_locale
+		if params[:locale]
+			session[:locale] = params[:locale]
+		end
+
+		I18n.locale = FastGettext.set_locale(locale())
+		logger.debug("Locale set to '#{I18n.locale}'")
 	end
 end
