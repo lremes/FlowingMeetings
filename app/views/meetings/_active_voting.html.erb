@@ -2,13 +2,15 @@
 <div class="p-2"><%= _('No voting in progress.') %></div>
 <% else %>
 <div class="text-warning p-2"><%= _('Voting in progress.') %></div>
+<%= flash[:error] %>
+
 <div class="card p-2"><%= sanitize @meeting.active_voting.text %></div>
 
-<% if @participant.votes.where(voting_id: @meeting.active_voting.id).present? %>
+<% if @participant.ballots.where(voting_id: @meeting.active_voting.id).first.submitted == true %>
     <%= _('You have already voted. Please waith for voting to end.') %>
 <% else %>
     <div class="card p-2">
-        <%= form_with url: submit_vote_path(@meeting.active_voting.id) do |f| %>
+        <%= form_with url: submit_vote_path() do |f| %>
         <div class="voting-options">
         <%= render partial: 'voting_options', collection: @meeting.active_voting.voting_options %>
         </div>

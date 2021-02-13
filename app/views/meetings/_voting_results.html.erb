@@ -1,0 +1,17 @@
+<table class="table results">
+<thead>
+    <th class="col"><%= _('VotingOption') %></th>
+    <th class="col"><%= _('Votes') %></th>
+    <th class="col">%</th>
+</thead>
+<tbody>
+<% tallies, total = voting_results.result %>
+<% tallies.each do |r| %>
+<tr>
+<td><%= r.text %></td>
+<td><%= r.votes %></td>
+<td><%= r.percentage(total) %></td>
+</tr>
+<% end %>
+</tbody>
+</table>

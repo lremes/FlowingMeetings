@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   get    '/', to: "meetings#join", as: 'join_meeting'
   post   'meetings/join', to: "meetings#join", as: 'enter_meeting'
+  post   'meetings/leave', to: "meetings#leave", as: 'leave_meeting'
   get    'meetings/participants/new', to: "meetings#new_participant", as: 'new_participant'
   post   'meetings/participants/', to: "meetings#add_participant", as: 'add_participant'
   get    'meetings/participants/identify', to: "meetings#identify_participant", as: 'identify_participant'
   patch  'meetings/participants/:participant_id', to: "meetings#update_participant", as: 'update_participant'
   get    'meetings/participate', to: "meetings#participate", as: 'participate'
 
-  post   'meetings/participate/voting/:voting_id/submit', to: "meetings#submit_vote", as: 'submit_vote'
+  post   'meetings/participate/voting/submit', to: "meetings#submit_vote", as: 'submit_vote'
 
   get    '/', to: "meetings#vote", as: 'vote'
 
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
   get    'admin/participants/:participant_id/permit', to: "meetings#permit_participant", as: 'permit_participant'
 
   get    'admin/votings/new', to: "votings#new", as: 'new_voting'
+  get   'admin/votings/:voting_id/votes', to: "votings#votes", as: 'votes'
   post   'admin/votings', to: "votings#create", as: 'create_voting'
   get    'admin/votings/:voting_id/edit', to: "votings#edit", as: 'edit_voting'
   patch  'admin/votings/:voting_id', to: "votings#update", as: 'update_voting'

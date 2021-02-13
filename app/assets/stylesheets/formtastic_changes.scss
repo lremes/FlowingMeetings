@@ -1,19 +1,10 @@
-@import 'variables';
-
 .formtastic {
 	margin-bottom: 0.5em;
 
 	.caret {
 		font-size: 1.1rem;
 	}
-
-	.form_guide {
-		background-color: $color-blue2;
-		color: white;
-		padding: 0.5em 0.5em;
-		margin-bottom: 0.5em;
-		font-size: 90%;
-	}
+	
 	.input {
 		list-style: none;
 		margin-bottom: 0 !important;

@@ -47,10 +47,9 @@ class VotingsController < ApplicationController
 
   def destroy
     respond_to do |format|
-      format.html {
+      format.js {
         get_voting()
-        @voting.destroy!
-        redirect_to manage_meeting_path() and return
+        @voting.destroy! if @voting.present?
       }
     end
   end
@@ -68,6 +67,19 @@ class VotingsController < ApplicationController
         rescue => ex
           handle_exception(request, ex, _('Failed to create voting.'))
           render action: 'edit' and return
+        end
+      }
+    end
+  end
+
+  def votes
+    respond_to do |format|
+      format.html {
+        begin
+          get_voting()
+        rescue => ex
+          handle_exception(request, ex, _('Failed to show cast votes.'))
+          redirect_to manage_meeting_path()
         end
       }
     end

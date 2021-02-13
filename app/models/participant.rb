@@ -3,7 +3,7 @@ class Participant < ApplicationRecord
     scope :permitted, -> { where(permitted: true) }
     belongs_to :meeting
 
-    has_many :votes, dependent: :destroy
+    has_many :ballots, dependent: :destroy
 
     validates :name, presence: true
     validates :token, presence: true

@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2021_02_12_120354) do
 
+  create_table "ballots", force: :cascade do |t|
+    t.integer "participant_id", null: false
+    t.integer "voting_id", null: false
+    t.boolean "submitted", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["submitted"], name: "index_ballots_on_submitted"
+  end
+
   create_table "meetings", force: :cascade do |t|
     t.string "name"
     t.datetime "start_time"
@@ -35,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_02_12_120354) do
     t.string "token"
     t.boolean "permitted", default: false
     t.integer "num_votes", default: 1
+    t.datetime "time_of_leaving"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["meeting_id"], name: "index_participants_on_meeting_id"
@@ -44,8 +54,17 @@ ActiveRecord::Schema.define(version: 2021_02_12_120354) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "participant_id", null: false
     t.integer "voting_id", null: false
+    t.integer "ballot_id"
+    t.integer "amount", default: 1
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["amount"], name: "index_votes_on_amount"
+  end
+
+  create_table "votes_voting_options", force: :cascade do |t|
+    t.integer "vote_id", null: false
+    t.integer "voting_option_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,8 +1,8 @@
-<li class="list-group-item p-0">
+<li class="list-group-item p-0" id="voting-<%= voting.id -%>">
     <div class="card-header">
-        <div class="caret d-flex justify-content-between" data-target="#voting-<%= voting.id %>" data-toggle="collapse" aria-expanded="false" role="button" title="<%= _('Click to expand/collapse') %>">
-            <div class="mr-auto"><%= sanitize voting.text %></div>
-            <div><%= voting.votes.count %> / <%= @meeting.participants.permitted.count -%></div>
+        <div class="d-flex justify-content-between">
+            <div class="mr-auto caret" data-target="#voting-<%= voting.id %>-details" data-toggle="collapse" aria-expanded="false" role="button" title="<%= _('Click to expand/collapse') %>"><%= sanitize voting.text %></div>
+            <div class="mr-4"><%= voting.ballots.submitted.count %> / <%= voting.ballots.count -%></div>
             <div class="actions">
             <%= link_to fa_icon('edit'), edit_voting_path(voting.id) %>
             <% if @meeting.active_voting == voting %>
@@ -10,20 +10,25 @@
             <% else %>
             <%= link_to fa_icon('play'), start_voting_path(voting.id) %>
             <% end %>
-            <%= link_to fa_icon('trash'), destroy_voting_path(voting.id) %>
+            <%= link_to fa_icon('trash-alt'), destroy_voting_path(voting.id), remote: true, data: { method: 'delete', confirm: _('Are you sure you want to delete the voting?') } %>
+            <% if voting.votes.present? %>
+            <%= link_to fa_icon('poll'), votes_path(voting.id) %>
+            <% end %>
             </div>
         </div>
     </div>
-    <div class="card-body collapse" id="voting-<%= voting.id -%>">
-        <div>
+    <div class="card-body collapse" id="voting-<%= voting.id -%>-details">
+        <div class="d-flex justify-content-between p-1">
             <div><%= _('Voting|Anonymous') %></div>
             <div><%= voting.anonymous? ? _('Yes') : _('No') %></div>
         </div>
-        <div>
+        <div class="d-flex justify-content-between p-1">
             <div><%= _('Voting|Voting type') %></div>
             <div><%= voting.voting_type %></div>
         </div>
-        <%= render partial: 'voting_option', collection: voting.voting_options %>
-        <%= render partial: 'voting_option', collection: voting.voting_options %>
+
+        <div class="p-1">
+            <%= render partial: 'voting_results', object: voting %>
+        </div>
     </div>
 </li>

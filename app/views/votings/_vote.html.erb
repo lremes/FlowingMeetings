@@ -1,0 +1,11 @@
+<tr>
+    <td><%= sanitize (vote.ballot.present?) ? vote.ballot.participant.name : _('Anonymous') -%></td>
+    <td><%= vote.amount -%></td>
+    <td>
+        <ul>
+        <% vote.voting_options.each do |vo| %>
+        <li><%= vo.text -%></li>
+        <% end %>
+        </ul>
+    </td>
+</tr>

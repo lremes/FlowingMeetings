@@ -1,0 +1,13 @@
+<h1><%= _('Submitted votes') %></h1>
+
+<table class="table">
+<thead>
+<th><%= _('Votes') %></th>
+<th><%= _('Number of votes') %></th>
+<th><%= _('Options') %></th>
+</thead>
+<tbody>
+<%= render partial: 'vote', collection: @voting.votes %>
+</tbody>
+
+<%= link_to _('Back to meeting'), manage_meeting_path() %>

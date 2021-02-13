@@ -17,6 +17,7 @@ class CreateInitialModels < ActiveRecord::Migration[6.1]
       t.string :token
       t.boolean :permitted, default: false, index: true
       t.integer :num_votes, default: 1, index: true
+      t.datetime :time_of_leaving, null: true
       t.timestamps
     end
 
@@ -36,13 +37,21 @@ class CreateInitialModels < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    create_table :votes do |t|
+    create_table :ballots do |t|
       t.integer :participant_id, foreign_key: true, null: false
       t.integer :voting_id, foreign_key: true, null: false
+      t.boolean :submitted, default: false, null: false, index: true
       t.timestamps
     end
 
-    create_table :votes_votes_options do |t|
+    create_table :votes do |t|
+      t.integer :voting_id, foreign_key: true, null: false
+      t.integer :ballot_id, foreign_key: true, null: true # for anonymous vote
+      t.integer :amount, default: 1, index: true
+      t.timestamps
+    end
+
+    create_table :votes_voting_options do |t|
       t.integer :vote_id, foreign_key: true, null: false
       t.integer :voting_option_id, foreign_key: true, null: false
       t.timestamps

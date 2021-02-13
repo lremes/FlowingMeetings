@@ -1,6 +1,9 @@
 <h1><%= @meeting.name %></h1>
 
+<% if @participant.time_of_leaving.present? %>
+<%= _('You have left the meeting.') %>
+<% else %>
 <%= render partial: 'active_voting' %>
 
-<script type="text/javascript">
-</script>
+<%= link_to _('Leave meeting'), leave_meeting_path(), remote: true, data: { method: :post } %>
+<% end %>

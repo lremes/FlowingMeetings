@@ -43,6 +43,19 @@ class MeetingsController < ApplicationController
         @meeting.active_voting = voting
         @meeting.save!
 
+        # remove all ballots and votes
+        @meeting.active_voting.ballots.destroy_all
+        @meeting.active_voting.votes.destroy_all
+
+        # TODO create ballots for current participants
+        @meeting.participants.reject { |p| p.time_of_leaving.present? }.each do |p|
+          ballot = Ballot.new
+          ballot.participant = p
+          ballot.voting = @meeting.active_voting
+          ballot.submitted = false
+          ballot.save!
+        end
+
         redirect_to manage_meeting_path() and return
       }
     end
@@ -166,28 +179,56 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def leave
+    respond_to do |format|
+      format.html {
+        begin
+          get_participating_meeting()
+          get_participant()
+          @participant.time_of_leaving = Time.now
+          @participant.save!
+        rescue => ex
+          handle_exception(request, ex, _('Failed to create voting.'))
+          redirect_to manage_meeting_path() and return
+        end
+      }
+    end
+  end
+
   def submit_vote
     respond_to do |format|
       format.html {
         begin
           get_participating_meeting()
           get_participant()
-          @voting = Voting.find_by_id(params[:voting_id])
+          
+          @voting = @meeting.active_voting
 
-          if @meeting.active_voting.id != @voting.id
+          if @voting.nil?
             flash[:error] = _('Voting is not active.')
             redirect_to participate_path() and return
           end
 
-          if @participant.votes.where(voting_id: @voting.id).present?
+          ballot = @voting.ballots.where(participant_id: @participant.id).first
+          if ballot.nil?
+            flash[:error] = _('You are not allowed to participate in this vote.')
+            redirect_to participate_path() and return
+          end
+          if ballot.submitted == true
             flash[:error] = _('You have already submitted your vote.')
             redirect_to participate_path() and return
           else
-            @vote = Vote.new
-            @vote.participant = @participant
-            @vote.voting = @voting
-            @vote.voting_options = @voting.voting_options.where(id: vote_params)
-            @vote.save!
+            ballot.submit!
+            logger.debug("Ballot submitted: #{ballot.inspect}")
+
+            vote = Vote.new
+            vote.voting = @voting
+            vote.amount = @participant.num_votes
+            unless @meeting.active_voting.anonymous?
+              vote.ballot = ballot
+            end # else we leave the ballot empty since this was an anonymous vote
+            vote.voting_options << @voting.voting_options.where(id: vote_params[:option_ids])
+            vote.save!
           end
 
           redirect_to participate_path() and return
@@ -218,11 +259,11 @@ class MeetingsController < ApplicationController
   end
 
   def participant_params
-    params.require(:participant).permit(:name)
+    params.require(:participant).permit(:name, :num_votes)
   end
 
   def vote_params
-    params.require(:vote).permit(:options)
+    params.require(:vote).permit(option_ids: [])
   end
 
 end
