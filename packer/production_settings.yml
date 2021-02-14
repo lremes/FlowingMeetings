@@ -1,0 +1,3 @@
+app_user: 'root'
+app_group: 'root'
+app_root_directory: '/usr/src/app'

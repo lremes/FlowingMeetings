@@ -1,0 +1,23 @@
+---
+  
+- name: Make sure SELinux is disabled
+  selinux: state=disabled
+  become: yes
+
+- name: Make sure SSL CA bundle is configured for Yum
+  lineinfile: dest=/etc/yum.conf state=present insertafter=EOF line=sslcacert=/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+  become: yes
+
+#- name: Make sure EPEL RPM GPG key is installed
+#  rpm_key: key={{ item }} state=present
+#  with_items: rpm_gpg_key_epel{{ ansible_distribution_major_version }}
+#  become: ansible_os_family == 'RedHat'
+#  sudo: yes
+
+- name: Make sure Yum cache is clean
+  command: /usr/bin/yum clean all
+  become: yes
+  
+- name: Allow SSH user environments
+  lineinfile: dest=/etc/ssh/sshd_config state=present line="PermitUserEnvironment yes" regexp="^PermitUserEnvironment yes" insertafter=EOF
+  become: yes

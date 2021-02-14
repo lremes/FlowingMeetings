@@ -1,0 +1,60 @@
+---
+
+- name: Install epel repo
+  package:
+     name: epel-release
+     state: latest
+  become: yes
+
+  
+- name: Install extra packages
+  package:
+    name: "{{ item }}"
+    state: latest
+  become: yes
+  with_items:
+    - curl
+    - git
+    - python-devel
+    - python-pip
+    - pygpgme
+    - unzip
+    - libyaml-devel 
+    - autoconf 
+    - gcc-c++ 
+    - patch 
+    - readline-devel 
+    - zlib-devel 
+    - libffi-devel 
+    - openssl-devel 
+    - bzip2 
+    - automake 
+    - libtool 
+    - bison 
+    - sqlite-devel
+    - libxml2-devel
+    - libxslt-devel
+    - iptraf-ng
+    - perl-LWP-Protocol-https
+    - perl-Crypt-SSLeay
+  tags: common
+
+- name: Make sure Git has correct SSL CA certificates
+  command: git config --system http.sslCAInfo /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+  become: yes
+
+- name: Upgrade pip
+  pip:
+     name: pip 
+     state: latest
+  become: yes
+  tags: 
+    - pip
+
+- name: Install python libs
+  pip:
+    name: lxml
+    state: present
+  become: yes
+  tags:
+    - pip

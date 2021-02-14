@@ -114,12 +114,15 @@ class MeetingsController < ApplicationController
           flash.clear
           if params[:meeting_code].present?
             @meeting = Meeting.where(passcode: params[:meeting_code]).first
+
+            raise _('Invalid meeting code') if @meeting.nil?
+
             session[:participating_meeting_id] = @meeting.id
-           redirect_to new_participant_path() and return
+            redirect_to new_participant_path() and return
           end
         rescue => ex
           handle_exception(request, ex, _('Failed to join meeting.'))
-          flash[:warning] = _('Invalid meeting code')
+          flash[:warning] = ex.message
           render action: 'join' and return
         end
       }
@@ -139,16 +142,25 @@ class MeetingsController < ApplicationController
       format.html {
         begin
           get_participating_meeting()
+
           @participant = Participant.new(participant_params)
+
+          if @meeting.participants.where(name: @participant.name).first.present?
+            @participant.errors.add(:name, _("Name '%{name}' is already taken. Please choose another name.") % { name: participant_params[:name] })
+            render action: 'new_participant' and return
+          end
           @participant.meeting = @meeting
           @participant.generate_identifier
           @participant.save!
 
           session[:participant_id] = @participant.id
 
+          #ManagementNotificationsChannel.broadcast
+          ActionCable.server.broadcast("ManagementNotificationsChannel", { message: "New participant added." })
+
           redirect_to identify_participant_path()
         rescue => ex
-          handle_exception(request, ex, _('Failed to create voting.'))
+          handle_exception(request, ex, ex.message)
           render action: 'new_participant' and return
         end
       }
@@ -172,6 +184,7 @@ class MeetingsController < ApplicationController
         @participant = Participant.find_by_id(params[:participant_id])
         @participant.permitted = true
         @participant.save!
+
         redirect_to manage_meeting_path() and return
       }
     end
@@ -275,6 +288,10 @@ class MeetingsController < ApplicationController
 
   def get_meeting
     @meeting = Meeting.find_by_id(session[:meeting_id])
+    if @meeting.nil? 
+      flash[:warning] = _('Meeting not found.')
+      redirect_to join_meeting_path() and return
+    end
   end
 
   def get_participating_meeting

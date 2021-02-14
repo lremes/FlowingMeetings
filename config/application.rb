@@ -20,26 +20,6 @@ module FlowingVotings
     # config.eager_load_paths << Rails.root.join("extras")
 
     # TELL RAILS TO USE OUR ROUTES FOR ERROR HANDLING
-		config.exceptions_app = self.routes
-
-    begin
-			config.before_configuration do
-				# Read REDIS configuration from ENV variables
-				if Rails.application.credentials.dig(:redis, :session, :ssl_port).present?
-					config.redis_session_url = "rediss://:#{Rails.application.credentials.dig(:redis, :session, :password)}@#{Rails.application.credentials.dig(:redis, :session, :hostname)}:#{Rails.application.credentials.dig(:redis, :session, :ssl_port)}/#{ENV.fetch('REDIS_SESSION_DB', '0')}"
-				else
-					config.redis_session_url = "redis://:#{Rails.application.credentials.dig(:redis, :session, :password)}@#{Rails.application.credentials.dig(:redis, :session, :hostname)}:#{Rails.application.credentials.dig(:redis, :session, :port)}/#{ENV.fetch('REDIS_SESSION_DB', '0')}"
-				end
-
-				if Rails.application.credentials.dig(:redis, :cache, :ssl_port).present?
-					config.redis_cache_url = "rediss://:#{Rails.application.credentials.dig(:redis, :cache, :password)}@#{Rails.application.credentials.dig(:redis, :cache, :hostname)}:#{Rails.application.credentials.dig(:redis, :cache, :ssl_port)}/#{ENV.fetch('REDIS_CACHE_DB', '0')}"
-				else
-					config.redis_cache_url = "redis://:#{Rails.application.credentials.dig(:redis, :cache, :password)}@#{Rails.application.credentials.dig(:redis, :cache, :hostname)}:#{Rails.application.credentials.dig(:redis, :cache, :port)}/#{ENV.fetch('REDIS_CACHE_DB', '0')}"
-				end
-			end
-		rescue => @ex
-			puts @ex.message
-			throw @ex
-		end
+	config.exceptions_app = self.routes
   end
 end

@@ -1,0 +1,11 @@
+---
+    
+- set_fact: this_release_ts="{{ lookup('pipe', 'date +%Y%m%d%H%M%S') }}"
+
+- set_fact: this_release_path="{{ app_root_directory }}"
+
+- include: install-software.yml
+  when: no_install is not defined
+
+- include: configure-environment.yml
+  when: no_install is not defined

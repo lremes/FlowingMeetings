@@ -1,0 +1,76 @@
+---
+- name: Update gem system
+  shell: "gem update --system"
+  become_user: "{{ app_user }}"
+
+- name: Extract bundler version
+  shell: gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
+  register: bundler_version
+
+- name: Print bundler version
+  shell: bundle --version
+  become_user: "{{ app_user }}"
+
+- name: Find existing environment files
+  find:
+    paths: "{{ this_release_path }}/config/environments/"
+    hidden: False
+    recurse: False
+    #file_type: any  # Added in ansible 2.3
+  register: collected_files
+  become_user: "{{ app_user }}"
+
+- name: Delete any old environment configs
+  file:
+    path: "{{ item.path }}"
+    state: absent
+  with_items: >
+    {{
+      collected_files.files
+    }}
+  become_user: "{{ app_user }}"
+
+- name: Fix for https://github.com/sass/sassc-ruby/issues/146
+  shell: bundle config build.sassc --disable-march-tune-native
+  args:
+    chdir: "{{ this_release_path }}"
+  environment:
+    RAILS_ENV: "{{ rails_env }}"
+  register: bundler_output
+  become_user: "{{ app_user }}"
+
+- name: Run bundler in deployment mode
+  shell: bundle config set deployment 'true'
+  args:
+    chdir: "{{ this_release_path }}"
+  environment:
+    RAILS_ENV: "{{ rails_env }}"
+  register: bundler_output
+  become_user: "{{ app_user }}"
+
+- name: Only install for selected environment
+  shell: bundle config set with  '{{ rails_env }}'
+  args:
+    chdir: "{{ this_release_path }}"
+  environment:
+    RAILS_ENV: "{{ rails_env }}"
+  register: bundler_output
+  become_user: "{{ app_user }}"
+
+- name: Dump bundler config
+  shell: bundle config
+  args:
+    chdir: "{{ this_release_path }}"
+  environment:
+    RAILS_ENV: "{{ rails_env }}"
+  become_user: "{{ app_user }}"
+  register: bundler_config
+
+- name: Install bundle
+  shell: bundle install --jobs 3
+  args:
+    chdir: "{{ this_release_path }}"
+  environment:
+    RAILS_ENV: "{{ rails_env }}"
+  become_user: "{{ app_user }}"
+  register: bundler_output

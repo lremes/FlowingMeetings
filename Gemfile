@@ -22,7 +22,6 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'pg'
 gem 'tinymce-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -41,6 +40,10 @@ gem 'health_check'
 gem 'better_errors'
 gem "exception_notification"
 gem 'sassc-rails'
+
+gem 'redis-rails'
+gem 'redis'
+gem 'hiredis'
 
 #gem 'i18n_data'
 # Use Active Storage variant

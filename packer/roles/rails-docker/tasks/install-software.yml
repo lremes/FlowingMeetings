@@ -1,0 +1,56 @@
+---
+
+#- name: Create app group
+#  group:
+#    name: "{{ app_group }}"
+#    gid: 1001
+#    state: present
+
+#- name: Create app user
+#  user:
+#    name: "{{ app_user }}"
+#    uid: 1001
+#    group: "{{ app_group }}"
+#    state: present
+
+- name: Create target directory
+  file:
+    path: "{{ app_root_directory }}"
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    state: directory
+  become: yes
+
+- name: Extract app
+  unarchive:
+    src: "/tmp/app.tar.gz"
+    dest: "{{ this_release_path }}"
+    copy: no
+  become: yes
+
+- name: Install version info file
+  template: 
+    src: app_version.rb.j2
+    dest: "{{ this_release_path }}/config/app_version.rb"
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+  become: yes
+
+- name: Create missing directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+  with_items:
+    - "{{ this_release_path }}/log"
+    - "{{ this_release_path }}/tmp"
+  become: yes
+
+- name: Change ownership of everything to app user
+  file:
+    path: "{{ this_release_path }}"
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    recurse: yes
+  become: yes

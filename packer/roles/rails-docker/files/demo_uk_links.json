@@ -1,0 +1,18 @@
+{
+  "mail": {
+    "contacts_url": "http://www.ramboll.com/",
+    "request_quotation_url": "mailto:helpdesk@lawly.fi"
+  },
+  "marketing": {
+    "home": "http://www.ramboll.com/"
+  },
+  "sales": {
+    "order": "https://www.lawly.fi/tilaa"
+  },
+  "integrations": {
+    "ytj": "http://avoindata.prh.fi/tr/v1/"
+  },
+  "sidemenu": {
+    "FAQ": "https://www.lawly.fi/usein-kysytyt-kysymykset/"
+  }
+}

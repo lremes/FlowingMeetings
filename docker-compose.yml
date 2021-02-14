@@ -1,0 +1,21 @@
+version: '2.4'
+services:
+  redis:
+    image: 'redis:4.0-alpine'
+    command: redis-server --requirepass devpwd
+    ports:
+      - "6379:6379"
+  app:
+    image: "flowing-meetings:test1"
+    ports:
+    - "3000:3000"
+    environment:
+      - RAILS_ENV=${RAILS_ENV:-production}
+      - RAILS_APP_PORT=3000
+      - REDIS_URL=redis://redis:6379/0
+    command: bundle exec rails s -b 0.0.0.0
+    working_dir: /usr/src/app
+    depends_on:
+    - redis
+    #volumes:
+    #  - '.:/usr/src/app'

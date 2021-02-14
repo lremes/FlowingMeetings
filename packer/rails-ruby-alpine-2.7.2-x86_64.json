@@ -1,0 +1,60 @@
+{
+  "description": "Build base RoR app image based on Alpine Linux x86_64",
+  "variables": {
+    "rails_env": "{{ env `RAILS_ENV` }}",
+    "app_version": "{{ env `APP_VERSION` }}"
+  },
+  "builders": [
+  {
+    "type": "docker",
+    "image": "ruby:2.7.2-alpine",
+    "commit": "true",
+    "run_command": [
+      "-d", "-i", "-t", "{{.Image}}", "/bin/sh"
+    ],
+    "changes": [
+      "WORKDIR /usr/src/app",
+      "USER root"
+    ]
+  }],
+  "provisioners": [
+    {
+      "type": "shell",
+      "scripts": [
+        "scripts/00base.sh",
+        "scripts/01alpine.sh",
+        "scripts/01networking.sh",
+        "scripts/02sshd.sh",
+        "scripts/04sudoers.sh",
+        "scripts/90rails.sh",
+        "scripts/91mail.sh",
+        "scripts/92python.sh"
+      ]
+    },
+    {
+      "type": "file",
+      "source": "app.tar.gz",
+      "destination": "/tmp/app.tar.gz"
+    },
+    {
+      "type": "ansible",
+      "playbook_file": "playbook-docker.yml",
+      "extra_arguments": [ "-v", "--extra-vars", "@production_settings.yml", "-e", "rails_env={{ user `rails_env` }}", "-e", "app_version={{ user `app_version` }}" ]
+    },
+    {
+      "type": "shell",
+      "scripts": [
+        "scripts/99minimize.sh"
+      ]
+    }
+  ],
+  "post-processors": [
+    [ 
+      {
+        "type": "docker-tag",
+        "repository": "flowing-votings",
+        "tag": "{{ user `app_version` }}"
+      }
+    ]
+  ]
+}

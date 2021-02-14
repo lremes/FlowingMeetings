@@ -1,0 +1,20 @@
+{
+  "mail": {
+    "contacts_url": "http://www.lawly.fi/asiantuntijamme/",
+    "request_quotation_url": "mailto:helpdesk@lawly.fi"
+  },
+  "marketing": {
+    "home": "https://www.lawly.fi"
+  },
+  "sales": {
+    "order": "https://www.lawly.fi/tilaa"
+  },
+  "integrations": {
+    "ytj": "http://avoindata.prh.fi/tr/v1/"
+  },
+  "sidemenu": {
+    "Viron EHS-lainsäädäntö": "http://seadused.enw.ee",
+    "Hinnasto": "https://www.lawly.fi/mika-on-lawly/hinnasto/",
+    "UKK": "https://www.lawly.fi/usein-kysytyt-kysymykset/"
+  }
+}

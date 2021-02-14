@@ -8,3 +8,4 @@
 //= require jquery_ujs
 //= require tinymce-jquery
 //= require tinymce_jquery_fix
+//= require cable

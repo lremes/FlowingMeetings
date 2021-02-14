@@ -1,0 +1,17 @@
+{
+  "mail": {
+    "contacts_url": "https://se.ramboll.com/",
+    "request_quotation_url": "mailto:helpdesk@lawly.fi"
+  },
+  "marketing": {
+    "home": "https://se.ramboll.com/"
+  },
+  "sales": {
+    "order": "https://se.ramboll.com/"
+  },
+  "integrations": {
+    "ytj": "http://avoindata.prh.fi/tr/v1/"
+  },
+  "sidemenu": {
+  }
+}

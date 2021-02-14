@@ -66,9 +66,9 @@ if defined?(Rails::Server)
 		config.http_status_for_ip_whitelist_error = 403
 
 		# When redis url is non-standard
-		unless Rails.application.config.respond_to?(:redis_session_url)
-			config.standard_checks << 'redis'
-			config.redis_url = Rails.application.config.redis_session_url
-		end
+		#unless Rails.application.config.respond_to?(:redis_session_url)
+		config.standard_checks << 'redis'
+		config.redis_url = ENV.fetch('REDIS_URL', 'redis://redis:6379/0')
+		#end
 	end
 end
