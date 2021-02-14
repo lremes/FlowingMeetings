@@ -4,12 +4,13 @@
 
 FlowingVotings is support tool for remote meeting organisers. It was inspired by meeting protocol used by [Junior Chamber International](https://jci.cc) (JCI) local chapter meeting protocols and developed to meet the challenges that meeting organisers are facing due to COVID-19 and plethora of different remote meeting applications.
 
-The idea of the application is that discussion and actual meeting will take place in in a conferencing app like Microsoft Team, Zoom or Google Meet. Then any votings will take place in this app, and the meeting's tellers will counts the votes and publish the results. 
+The idea of the application is that discussion and actual meeting will take place in a conferencing app like Microsoft Team, Zoom or Google Meet. Then any votings will take place in this app, and the meeting's tellers will count the votes and publish the results.
 
 The key features are:
-- Does not require signup, email address or account
-- Supports single choice, multi-select 
-- Support both public and anonymous votings/elections
+- Does not require signup, email address or account to manage meetings or participate in them
+- Supports single choice and multi-select votings 
+- Support both regular and anonymous votings
+- Localisation support for UI
 
 # License
 
