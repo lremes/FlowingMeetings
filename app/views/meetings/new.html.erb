@@ -6,3 +6,11 @@
 	<%= f.input :start_time, as: :datetime_picker %>
 	<%= f.submit _('Save') %>
 <% end %>
+
+<hr>
+<h1><%= _('Hallinnoi kokousta') %></h1>
+<%= form_with url: admin_login_path(), authenticity_token: true do |f| %>
+	<%= render partial: 'layouts/form_guide' %>
+	<%= f.text_field :meeting_password %>
+	<%= f.submit _('Login') %>
+<% end %>

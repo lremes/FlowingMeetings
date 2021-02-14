@@ -74,7 +74,7 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  i18n_config = JSON.parse(ENV.fetch('FLOWINGMEETINGS_I18N_JSON','{ "available": [ "fi","en" ], "default": "en", "fallbacks": { "fi": "en" } }'))
+  i18n_config = JSON.parse(ENV.fetch('FlowingVotins_I18N_JSON','{ "available": [ "fi","en" ], "default": "en", "fallbacks": { "fi": "en" } }'))
 
   config.i18n.available_locales = i18n_config['available']
 	config.i18n.default_locale = i18n_config['default']

@@ -1,2 +1,6 @@
-<div did="header-container">
+<div id="header-container" class="d-flex justify-content-between p-4">
+<div style="font-size: 1.2rem;">FlowingVotins</div>
+<% if session[:meeting_id].present? %>
+<%= link_to fa_icon('sign-out-alt'), admin_logout_path(), title: _('logout'), class: 'fa-2x', data: { toggle: 'tooltip' } %>
+<% end %>
 </div>

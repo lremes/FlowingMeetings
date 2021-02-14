@@ -8,7 +8,10 @@ class Voting < ApplicationRecord
 
     validates :text, presence: true
 
-    enum voting_type: { single: 0, multiple: 1 }
+    enum voting_type: { single_choice: 0, multiple_choice: 1 }
+
+    N_('single_choice')
+    N_('multiple_choice')
 
     def result
         tallies = self.voting_options.map { |x| Tally.new(voting_option: x) }

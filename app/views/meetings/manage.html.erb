@@ -10,14 +10,14 @@
 <% end %>
 
 
-<h2><%= _('Participants') %></h2>
-<ul class="list-group">
+<h2 class="mt-4"><%= _('Participants') %></h2>
+<ul class="list-group mb-2">
 <%= render partial: 'participant', collection: @meeting.participants %>
 </ul>
 
-<h2><%= _('Votings') %></h2>
+<h2 class="mt-4"><%= _('Votings') %></h2>
 <%= link_to _('Add new voting'), new_voting_path() %>
-<ul class="list-group">
+<ul class="list-group mb-2">
 <%= render partial: 'voting', collection: @meeting.votings %>
 </ul>
 

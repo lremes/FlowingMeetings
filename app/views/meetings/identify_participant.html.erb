@@ -1,2 +1,5 @@
 <h1><%= _('Identify participant') %></h1>
-<%= _('Identify yourself to the meeting organiser by passing this code to them for validation: %{code}') %  { code: @participant.token } %>
+<%= sanitize _('Identify yourself to the meeting organiser by passing this code to them for validation:') %>
+<div class="mt-2">
+<span class="border rounded p-2 text-dark bg-light "><%= @participant.token -%></span>
+</div>

@@ -2,6 +2,6 @@
 <%= semantic_form_for(@participant, url: add_participant_path(), authenticity_token: true) do |f| %>
 	<%= render partial: 'layouts/form_guide' %>
 	<%= f.semantic_errors :participant %>
-	<%= f.input :name %>
+	<%= f.input :name, placeholder: false %>
 	<%= f.submit _('Save') %>
 <% end %>

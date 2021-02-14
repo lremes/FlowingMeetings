@@ -2,8 +2,35 @@
 <%= semantic_form_for(@voting, url: create_voting_path(), authenticity_token: true) do |f| %>
 	<%= render partial: 'layouts/form_guide' %>
 	<%= f.semantic_errors :voting %>
-	<%= f.input :text %>
+	<%= f.input :text, placeholder: false %>
 	<%= f.input :anonymous, as: :boolean %>
-	<%= f.input :voting_type, as: :select, collection: options_from_collection_for_select(Voting.voting_types, :first, :first, @voting.voting_type.to_s) %>
+	<%= f.input :voting_type, as: :select, collection: options_from_collection_for_select(Voting.voting_types.map { |x| [ _(x[0]), x[0] ] }, :first, :last, @voting.voting_type.to_s) %>
 	<%= f.submit _('Save') %>
 <% end %>
+
+<%= link_to _('Back to meeting'), manage_meeting_path() %>
+
+
+<script type="text/javascript">
+tinymce.init({
+	selector: 'textarea',
+	language: '<%= I18n.locale %>',
+	entity_encoding: 'raw',
+	theme: 'silver',
+	inline: false,
+	menubar: false,
+	forced_root_block: false,
+	branding: false,
+	width: '75%',
+	mobile: { theme: 'mobile' },
+	plugins: "hr link lists autoresize autosave",
+	toolbar: "bold italic underline strikethrough | forecolor backcolor | bullist numlist | link unlink | pastetext",
+	paste_as_text: true,
+	paste_auto_cleanup_on_paste: true,
+	setup: function(ed){
+		ed.on('init', function(args) {
+			ed.focus();
+		});
+	}
+});
+</script>

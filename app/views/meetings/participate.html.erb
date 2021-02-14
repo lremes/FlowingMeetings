@@ -5,5 +5,5 @@
 <% else %>
 <%= render partial: 'active_voting' %>
 
-<%= link_to _('Leave meeting'), leave_meeting_path(), remote: true, data: { method: :post } %>
+<div class="mt-2"><%= link_to _('Leave meeting'), leave_meeting_path(), remote: true, data: { method: :post } %></div>
 <% end %>

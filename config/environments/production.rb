@@ -60,7 +60,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "FlowingMeetings_production"
+  # config.active_job.queue_name_prefix = "FlowingVotins_production"
 
   config.action_mailer.perform_caching = false
 
@@ -118,7 +118,7 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  i18n_config = JSON.parse(ENV.fetch('FLOWINGMEETINGS_I18N_JSON','{ "available": [ "fi","en" ], "default": "en", "fallbacks": { "fi": "en" } }'))
+  i18n_config = JSON.parse(ENV.fetch('FlowingVotins_I18N_JSON','{ "available": [ "fi","en" ], "default": "en", "fallbacks": { "fi": "en" } }'))
 
   config.i18n.available_locales = i18n_config['available']
 	config.i18n.default_locale = i18n_config['default']

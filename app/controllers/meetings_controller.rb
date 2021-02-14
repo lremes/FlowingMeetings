@@ -15,6 +15,31 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def admin_login
+    respond_to do |format|
+      format.html {
+        begin
+          @meeting = Meeting.find_by_admin_password(params[:meeting_password])
+          session[:meeting_id] = @meeting.id
+
+          redirect_to manage_meeting_path()
+        rescue => ex
+          handle_exception(request, ex, _('Failed to login.'))
+          render action: 'new' and return
+        end
+      }
+    end
+  end
+
+  def admin_logout
+    respond_to do |format|
+      format.html {
+        session.delete(:meeting_id)
+        redirect_to new_meeting_path()
+      }
+    end
+  end
+
   def create
     respond_to do |format|
       format.html {
@@ -87,9 +112,11 @@ class MeetingsController < ApplicationController
       format.html {
         begin
           flash.clear
-          @meeting = Meeting.where(passcode: params[:meeting_code]).first
-          session[:participating_meeting_id] = @meeting.id
-          redirect_to new_participant_path() and return
+          if params[:meeting_code].present?
+            @meeting = Meeting.where(passcode: params[:meeting_code]).first
+            session[:participating_meeting_id] = @meeting.id
+           redirect_to new_participant_path() and return
+          end
         rescue => ex
           handle_exception(request, ex, _('Failed to join meeting.'))
           flash[:warning] = _('Invalid meeting code')

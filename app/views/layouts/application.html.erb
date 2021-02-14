@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FlowingMeetings</title>
+    <title>FlowingVotins</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -25,5 +25,8 @@
 
         <%= render :partial => '/layouts/footer' %>
       </div>
+      <script type="text/javascript">
+      $('[data-toggle="tooltip"]').tooltip()
+      </script>
   </body>
 </html>

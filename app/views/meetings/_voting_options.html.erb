@@ -1,8 +1,8 @@
-<div>
-<% if @meeting.active_voting.single? %>
+<div class="p-1">
+<% if @meeting.active_voting.single_choice? %>
     <%= radio_button_tag 'vote[option_ids][]', voting_options.id %> <%= voting_options.text %>
 <% end %>
-<% if @meeting.active_voting.multiple? %>
+<% if @meeting.active_voting.multiple_choice? %>
     <%= check_box_tag 'vote[option_ids][]', voting_options.id %> <%= voting_options.text %>
 <% end %>
 </div>

@@ -13,7 +13,7 @@
 <%= semantic_form_for(@voting_option, url: create_voting_option_path(@voting.id), authenticity_token: true) do |f| %>
 	<%= render partial: 'layouts/form_guide' %>
 	<%= f.semantic_errors :voting_option %>
-	<%= f.input :text %>
+	<%= f.input :text, placeholder: false %>
 	<%= f.submit _('Save') %>
 <% end %>
 
@@ -22,3 +22,27 @@
 </div>
 
 <%= link_to _('Back to meeting'), manage_meeting_path() %>
+
+<script type="text/javascript">
+tinymce.init({
+	selector: 'textarea',
+	language: '<%= I18n.locale %>',
+	entity_encoding: 'raw',
+	theme: 'silver',
+	inline: false,
+	menubar: false,
+	forced_root_block: false,
+	branding: false,
+	width: '75%',
+	mobile: { theme: 'mobile' },
+	plugins: "hr link lists autoresize autosave",
+	toolbar: "bold italic underline strikethrough | forecolor backcolor | bullist numlist | link unlink | pastetext",
+	paste_as_text: true,
+	paste_auto_cleanup_on_paste: true,
+	setup: function(ed){
+		ed.on('init', function(args) {
+			ed.focus();
+		});
+	}
+});
+</script>

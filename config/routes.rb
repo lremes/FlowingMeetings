@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get    '/', to: "meetings#vote", as: 'vote'
 
   get    'admin/', to: "meetings#new", as: 'new_meeting'
+  post   'admin/login', to: "meetings#admin_login", as: 'admin_login'
+  post   'admin/logout', to: "meetings#admin_logout", as: 'admin_logout'
   post   'admin/', to: "meetings#create", as: 'create_meeting'
   get    'admin/manage', to: "meetings#manage", as: 'manage_meeting'
   patch  'admin/', to: "meetings#update", as: 'update_meeting'
