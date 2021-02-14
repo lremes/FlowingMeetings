@@ -9,7 +9,7 @@ else
 	repos = [
 		FastGettext::TranslationRepository.build('app', path: 'locale', type: :po) #, ignore_fuzzy: false, report_warning: false),
 	]
-	FastGettext.add_text_domain 'flowing_meetings', type: :chain, chain: repos
+	FastGettext.add_text_domain 'app', type: :chain, chain: repos
 end
 FastGettext.default_text_domain = 'app'
 FastGettext.default_available_locales = [ 'en', 'fi' ] # Rails.application.config.i18n.available_locales

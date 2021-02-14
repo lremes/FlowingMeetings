@@ -14,18 +14,6 @@ class ErrorsController < ApplicationController
 					]
 				}, status: 404
 			}
-			type.api_json {
-				response.headers['Content-Type'] = 'application/vnd.api+json' if request.env['HTTP_ACCEPT'] == 'application/vnd.api+json'
-				render json: {
-					errors: [
-						id: request.uuid,
-						title: _('Not found'),
-						source: {
-							pointer: request.env["ORIGINAL_FULLPATH"] 
-						}
-					]
-				}, status: 404
-			}
 			type.all  { render nothing: true, status: 404 }
 		end
 	end
@@ -34,18 +22,6 @@ class ErrorsController < ApplicationController
 		respond_to do |type|
 			type.html { render template: "errors/500_internal_server_error", status: 500 }
 			type.json { 
-				response.headers['Content-Type'] = 'application/vnd.api+json' if request.env['HTTP_ACCEPT'] == 'application/vnd.api+json'
-				render json: {
-					errors: [
-						id: request.uuid,
-						title: _('Internal server error'),
-						source: {
-							pointer: request.env["ORIGINAL_FULLPATH"] 
-						}
-					]
-				}, status: 500
-			}
-			type.api_json { 
 				response.headers['Content-Type'] = 'application/vnd.api+json' if request.env['HTTP_ACCEPT'] == 'application/vnd.api+json'
 				render json: {
 					errors: [
@@ -80,18 +56,6 @@ class ErrorsController < ApplicationController
 					]
 				}, status: 401
 			}
-			type.api_json { 
-				response.headers['Content-Type'] = 'application/vnd.api+json' if request.env['HTTP_ACCEPT'] == 'application/vnd.api+json'
-				render json: {
-					errors: [
-						id: request.uuid,
-						title: _('Unauthorized'),
-						source: {
-							pointer: request.env["ORIGINAL_FULLPATH"] 
-						}
-					]
-				}, status: 401
-			}
 			type.all  { render nothing: true, status: 401 }
 		end
 	end
@@ -100,18 +64,6 @@ class ErrorsController < ApplicationController
 		respond_to do |type|
 			type.html { render template: "errors/403_forbidden", status: 403 }
 			type.json {
-				response.headers['Content-Type'] = 'application/vnd.api+json' if request.env['HTTP_ACCEPT'] == 'application/vnd.api+json'
-				render json: {
-					errors: [
-						id: request.uuid,
-						title: _('Forbidden'),
-						source: {
-							pointer: request.env["ORIGINAL_FULLPATH"] 
-						}
-					]
-				}, status: 403
-			}
-			type.api_json {
 				response.headers['Content-Type'] = 'application/vnd.api+json' if request.env['HTTP_ACCEPT'] == 'application/vnd.api+json'
 				render json: {
 					errors: [
