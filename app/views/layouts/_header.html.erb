@@ -1,6 +1,6 @@
-<div id="header-container" class="d-flex justify-content-between p-4">
-<div style="font-size: 1.2rem;">FlowingVotins</div>
+<div id="header-container" class="d-flex justify-content-between shadow shadow-lg">
+<div class="p-1"><%= image_tag :logo, alt: 'FlowingVotings', style: 'max-height: 80px;' -%></div>
 <% if session[:meeting_id].present? %>
-<%= link_to fa_icon('sign-out-alt'), admin_logout_path(), title: _('logout'), class: 'fa-2x', data: { toggle: 'tooltip' } %>
+<div class="p-3"><%= link_to fa_icon('sign-out-alt'), admin_logout_path(), title: _('logout'), class: 'fa-2x', data: { toggle: 'tooltip' } %></div>
 <% end %>
 </div>
