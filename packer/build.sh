@@ -27,6 +27,7 @@ tar -czvf packer/app.tar.gz app/ bin/ db/ lib/ public/ \
 locale/app.pot ${LOCALE_FILES} \
 config.ru Gemfile Gemfile.lock Rakefile \
 config/boot.rb config/initializers config/puma.rb config/routes.rb \
-config/spring.rb config/storage.yml config/application.rb config/environment.rb config/webpacker.yml
+config/spring.rb config/storage.yml config/application.rb config/environment.rb config/webpacker.yml \
+config/credentials.yml.enc config/environments/production.rb config/database.yml config/cable.yml config/master.key
 cd packer
 packer build rails-ruby-alpine-${RUBY_VERSION}-x86_64.json

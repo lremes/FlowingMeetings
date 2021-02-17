@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   get    '/', to: "meetings#join", as: 'join_meeting'
   post   'meetings/join', to: "meetings#join", as: 'enter_meeting'
-  post   'meetings/leave', to: "meetings#leave", as: 'leave_meeting'
   get    'meetings/participants/new', to: "meetings#new_participant", as: 'new_participant'
   post   'meetings/participants/', to: "meetings#add_participant", as: 'add_participant'
   get    'meetings/participants/identify', to: "meetings#identify_participant", as: 'identify_participant'
   patch  'meetings/participants/:participant_id', to: "meetings#update_participant", as: 'update_participant'
   get    'meetings/participate', to: "meetings#participate", as: 'participate'
+  delete 'meetings/participants', to: "meetings#leave", as: 'leave_meeting'
 
   post   'meetings/participate/voting/submit', to: "meetings#submit_vote", as: 'submit_vote'
 
@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get    'admin/manage', to: "meetings#manage", as: 'manage_meeting'
   patch  'admin/', to: "meetings#update", as: 'update_meeting'
   delete 'admin', to: "meetings#destroy", as: 'destroy_meeting'
+  get    'admin/participants/list', to: "meetings#participants", as: 'meeting_participants_list', constraints: { format: 'js' }
+  get    'admin/votings/list', to: "meetings#votings", as: 'meeting_votings_list', constraints: { format: 'js' }
 
   get    'admin/voting/:voting_id/start', to: "meetings#start_voting", as: 'start_voting'
   get    'admin/voting/stop', to: "meetings#stop_voting", as: 'stop_voting'

@@ -8,7 +8,7 @@
 <% end %>
 
 <hr>
-<h1><%= _('Hallinnoi kokousta') %></h1>
+<h1><%= _('Manage a meeting') %></h1>
 <%= form_with url: admin_login_path(), authenticity_token: true do |f| %>
 	<%= render partial: 'layouts/form_guide' %>
 	<%= f.text_field :meeting_password %>

@@ -9,21 +9,20 @@
 	<%= f.submit _('Save') %>
 <% end %>
 
-
 <h2 class="mt-4"><%= _('Participants') %></h2>
-<ul class="list-group mb-2">
+<ul class="list-group mb-2" id="participants">
 <%= render partial: 'participant', collection: @meeting.participants %>
 </ul>
 
 <h2 class="mt-4"><%= _('Votings') %></h2>
 <%= link_to _('Add new voting'), new_voting_path() %>
-<ul class="list-group mb-2">
+<ul class="list-group mb-2" id="votings">
 <%= render partial: 'voting', collection: @meeting.votings %>
 </ul>
 
 <script type="text/javascript">
 App.cable.subscriptions.create(
-  { channel: "ManagementNotificationsChannel" },
+  { channel: "ManagementNotificationsChannel", meeting: "<%= @meeting.admin_password -%>" },
   {
     connected: function() {
       console.log("connected");
@@ -39,6 +38,31 @@ App.cable.subscriptions.create(
 
     received: function(data) {
       console.log('Received:', data);
+      switch(data['message']) {
+      case 'new_participant':
+        $.ajax({
+          method: 'GET',
+          dataType: 'script',
+          url: '<%= meeting_participants_list_path() -%>'
+        })
+        break;
+      case 'participant_left':
+        $.ajax({
+          method: 'GET',
+          dataType: 'script',
+          url: '<%= meeting_participants_list_path() -%>'
+        })
+        break;
+      case 'new_vote':
+        $.ajax({
+          method: 'GET',
+          dataType: 'script',
+          url: '<%= meeting_votings_list_path() -%>'
+        })
+        break;
+      default:
+        console.log('Unsupported message:', data);
+      }
     }
   }
 );

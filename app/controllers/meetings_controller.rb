@@ -107,6 +107,37 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def destroy
+    respond_to do |format|
+      format.html {
+        begin
+          get_meeting()
+          @meeting.destroy! if @meeting.present?
+        rescue => ex
+        ensure
+          session.delete(:meeting_id)
+        end
+        redirect_to new_meeting_path() and return
+      }
+    end
+  end
+
+  def participants
+    respond_to do |format|
+      format.js {
+        get_meeting()
+      }
+    end
+  end
+
+  def votings
+    respond_to do |format|
+      format.js {
+        get_meeting()
+      }
+    end
+  end
+
   def join
     respond_to do |format|
       format.html {
@@ -155,8 +186,7 @@ class MeetingsController < ApplicationController
 
           session[:participant_id] = @participant.id
 
-          #ManagementNotificationsChannel.broadcast
-          ActionCable.server.broadcast("ManagementNotificationsChannel", { message: "New participant added." })
+          ManagementNotificationsChannel.broadcast_to @meeting, { message: "new_participant" }
 
           redirect_to identify_participant_path()
         rescue => ex
@@ -184,6 +214,8 @@ class MeetingsController < ApplicationController
         @participant = Participant.find_by_id(params[:participant_id])
         @participant.permitted = true
         @participant.save!
+
+        ParticipantNotificationsChannel.broadcast_to @participant, { message: "refresh" }
 
         redirect_to manage_meeting_path() and return
       }
@@ -227,6 +259,9 @@ class MeetingsController < ApplicationController
           get_participant()
           @participant.time_of_leaving = Time.now
           @participant.save!
+          ManagementNotificationsChannel.broadcast_to @meeting, { message: "participant_left" }
+          reset_session
+          redirect_to '/' and return
         rescue => ex
           handle_exception(request, ex, _('Failed to create voting.'))
           redirect_to manage_meeting_path() and return
@@ -269,6 +304,8 @@ class MeetingsController < ApplicationController
             end # else we leave the ballot empty since this was an anonymous vote
             vote.voting_options << @voting.voting_options.where(id: vote_params[:option_ids])
             vote.save!
+
+            ManagementNotificationsChannel.broadcast_to @meeting, { message: "new_vote" }
           end
 
           redirect_to participate_path() and return
@@ -290,7 +327,7 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.find_by_id(session[:meeting_id])
     if @meeting.nil? 
       flash[:warning] = _('Meeting not found.')
-      redirect_to join_meeting_path() and return
+      not_found #redirect_to join_meeting_path() and return
     end
   end
 

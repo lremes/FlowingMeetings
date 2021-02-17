@@ -51,6 +51,16 @@ class ApplicationController < ActionController::Base
 		resp
 	end
 
+	protected
+	
+	def not_found
+		raise ActionController::RoutingError.new('Not Found')
+	end
+
+	def unauthorized
+		raise ActionController::RoutingError.new('Unauthorized')
+	end
+
 	private
 
 	def locale

@@ -2,3 +2,4 @@
 .galaxy
 certs
 *.rpm
+packer/app.tar.gz
