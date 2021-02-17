@@ -3,7 +3,7 @@
 	<%= render partial: 'layouts/form_guide' %>
 	<%= f.semantic_errors :voting %>
 	<%= f.input :text, placeholder: false %>
-	<%= f.input :anonymous, as: :boolean %>
+	<%= f.input :secret, as: :boolean %>
 	<%= f.input :voting_type, as: :select, collection: options_from_collection_for_select(Voting.voting_types.map { |x| [ _(x[0]), x[0] ] }, :first, :last, @voting.voting_type.to_s) %>
 	<%= f.submit _('Save') %>
 <% end %>

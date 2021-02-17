@@ -23,7 +23,13 @@ msgstr ""
 msgid "Anonymous"
 msgstr ""
 
+msgid "Are you sure you want delete this meeting?"
+msgstr ""
+
 msgid "Are you sure you want to delete the voting?"
+msgstr ""
+
+msgid "Are you sure you want to remove the participant? It will also delete any cast votes."
 msgstr ""
 
 msgid "Back to meeting"
@@ -89,6 +95,9 @@ msgstr ""
 msgid "Failed to join meeting."
 msgstr ""
 
+msgid "Failed to login."
+msgstr ""
+
 msgid "Failed to show cast votes."
 msgstr ""
 
@@ -101,7 +110,7 @@ msgstr ""
 msgid "Identify participant"
 msgstr ""
 
-msgid "Identify yourself to the meeting organiser by passing this code to them for validation: %{code}"
+msgid "Identify yourself to the meeting organiser by passing this code to them for validation:"
 msgstr ""
 
 msgid "Internal server error"
@@ -122,10 +131,19 @@ msgstr ""
 msgid "Left the meeting at %{time}"
 msgstr ""
 
+msgid "Login"
+msgstr ""
+
+msgid "Manage a meeting"
+msgstr ""
+
 msgid "Manage meeting"
 msgstr ""
 
 msgid "Meeting"
+msgstr ""
+
+msgid "Meeting not found."
 msgstr ""
 
 msgid "Meetings"
@@ -171,6 +189,9 @@ msgid "Meeting|Start time"
 msgstr ""
 
 msgid "Meeting|Start time|hint"
+msgstr ""
+
+msgid "Name '%{name}' is already taken. Please choose another name."
 msgstr ""
 
 msgid "Next"
@@ -225,6 +246,9 @@ msgid "PageTitle|active_storage/representations/proxy"
 msgstr ""
 
 msgid "PageTitle|active_storage/representations/redirect"
+msgstr ""
+
+msgid "PageTitle|assets"
 msgstr ""
 
 msgid "PageTitle|errors"
@@ -413,6 +437,9 @@ msgstr ""
 msgid "Voting|Options"
 msgstr ""
 
+msgid "Voting|Secret"
+msgstr ""
+
 msgid "Voting|Start time"
 msgstr ""
 
@@ -452,5 +479,17 @@ msgstr ""
 msgid "You have left the meeting."
 msgstr ""
 
+msgid "errors.models.participant.attributes.name.blank"
+msgstr ""
+
+msgid "logout"
+msgstr ""
+
+msgid "multiple_choice"
+msgstr ""
+
 msgid "save"
+msgstr ""
+
+msgid "single_choice"
 msgstr ""

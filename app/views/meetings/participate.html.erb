@@ -31,7 +31,8 @@ App.cable.subscriptions.create(
         location.reload();
         break;
       default:
-        console.log('Unsupported message:', data);
+        console.log('Received message:', data);
+        location.reload();
       }
     }
   }

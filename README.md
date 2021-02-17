@@ -7,9 +7,9 @@ FlowingVotings is support tool for remote meeting organisers. It was inspired by
 The idea of the application is that discussion and actual meeting will take place in a conferencing app like Microsoft Team, Zoom or Google Meet. Then any votings will take place in this app, and the meeting's tellers will count the votes and publish the results.
 
 The key features are:
-- Does not require signup, email address or account to manage meetings or participate in them
-- Supports single choice and multi-select votings 
-- Support both regular and anonymous votings
+- Does not require email address or account to manage meetings or participate in them
+- Supports single choice and multi-select ballots
+- Support both public and secret ballots
 - Localisation support for UI
 
 # License

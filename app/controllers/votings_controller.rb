@@ -97,7 +97,7 @@ class VotingsController < ApplicationController
   end
 
   def voting_params
-    params.require(:voting).permit(:text, :voting_type, :anonymous)
+    params.require(:voting).permit(:text, :voting_type, :secret)
   end
 
   def voting_option_params

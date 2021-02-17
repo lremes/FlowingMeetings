@@ -14,7 +14,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"POT-Creation-Date: \n"
 "Last-Translator: Lars Remes <lars.remes@lawly.fi>\n"
 "X-Generator: Poedit 2.4.2\n"
 
@@ -24,8 +23,15 @@ msgstr "Lisää äänestys"
 msgid "Anonymous"
 msgstr "Suljettu äänestys"
 
+#, fuzzy
+msgid "Are you sure you want delete this meeting?"
+msgstr "Haluatko varmasti poistaa äänestyksen?"
+
 msgid "Are you sure you want to delete the voting?"
 msgstr "Haluatko varmasti poistaa äänestyksen?"
+
+msgid "Are you sure you want to remove the participant? It will also delete any cast votes."
+msgstr ""
 
 msgid "Back to meeting"
 msgstr "Takaisin kokoukseen"
@@ -55,7 +61,7 @@ msgid "Ballot|Voting|hint"
 msgstr "Äänestys, johon äänestyslippu liittyy."
 
 msgid "Cast ballots"
-msgstr "Annetut äänet"
+msgstr ""
 
 msgid "Click to expand/collapse"
 msgstr "Laajenna/supista"
@@ -90,6 +96,9 @@ msgstr "Äänestyksen luonti epäonnistui."
 msgid "Failed to join meeting."
 msgstr "Kokoukseen liittyminen epäonnistui."
 
+msgid "Failed to login."
+msgstr ""
+
 msgid "Failed to show cast votes."
 msgstr "Annettujen äänien näyttäminen epäonnistui."
 
@@ -102,7 +111,8 @@ msgstr "Kielletty"
 msgid "Identify participant"
 msgstr "Tunnista osallistuja"
 
-msgid "Identify yourself to the meeting organiser by passing this code to them for validation: %{code}"
+#, fuzzy
+msgid "Identify yourself to the meeting organiser by passing this code to them for validation:"
 msgstr "Tunnista itsesi kokouksen järjestäjälle välittämällä heille tämä koodi: %{code}"
 
 msgid "Internal server error"
@@ -123,10 +133,21 @@ msgstr "Poistu kokouksesta"
 msgid "Left the meeting at %{time}"
 msgstr "Poistui %{time}"
 
+msgid "Login"
+msgstr ""
+
+#, fuzzy
+msgid "Manage a meeting"
+msgstr "Hallinnoi kokousta"
+
 msgid "Manage meeting"
 msgstr "Hallinnoi kokousta"
 
 msgid "Meeting"
+msgstr "Kokous"
+
+#, fuzzy
+msgid "Meeting not found."
 msgstr "Kokous"
 
 msgid "Meetings"
@@ -173,6 +194,9 @@ msgstr "Aloitusaika"
 
 msgid "Meeting|Start time|hint"
 msgstr "Kokouksen aloitusaika"
+
+msgid "Name '%{name}' is already taken. Please choose another name."
+msgstr ""
 
 msgid "Next"
 msgstr "Seuraava"
@@ -227,6 +251,10 @@ msgstr ""
 
 msgid "PageTitle|active_storage/representations/redirect"
 msgstr ""
+
+#, fuzzy
+msgid "PageTitle|assets"
+msgstr "Virhe!"
 
 msgid "PageTitle|errors"
 msgstr "Virhe!"
@@ -414,6 +442,10 @@ msgstr "Kokous, johon äänestys kuuluu."
 msgid "Voting|Options"
 msgstr "Äänestysvaihtoehdot"
 
+#, fuzzy
+msgid "Voting|Secret"
+msgstr "Äänestys"
+
 msgid "Voting|Start time"
 msgstr "Aloitusaika"
 
@@ -453,5 +485,17 @@ msgstr "Olet jo antanut äänesi käynnissä olevaan äänestykseen. Ole hyvä j
 msgid "You have left the meeting."
 msgstr "Olet poistunut kokouksesta."
 
+msgid "errors.models.participant.attributes.name.blank"
+msgstr ""
+
+msgid "logout"
+msgstr ""
+
+msgid "multiple_choice"
+msgstr ""
+
 msgid "save"
 msgstr "tallenna"
+
+msgid "single_choice"
+msgstr ""

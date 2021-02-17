@@ -20,6 +20,11 @@
             <% unless participant.permitted? %>
             <%= link_to fa_icon('play'), permit_participant_path(participant.id) %>
             <% end %>
+            <% if participant.ballots.blank? %>
+            <%= link_to fa_icon('trash-alt'), destroy_participant_path(participant.id), remote: true, data: { method: :delete, confirm: _('Are you sure you want to remove the participant?')} %>
+            <% else %>
+            <%= fa_icon('trash-alt', title: _('You can only delete participants that have not cast any votes.'), class: 'text-secondary', data: { toggle: 'tooltip' }) %>
+            <% end %>
             </div>
         </div>
     </div>

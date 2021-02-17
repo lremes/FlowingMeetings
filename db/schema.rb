@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2021_02_12_120354) do
 
   create_table "meetings", force: :cascade do |t|
     t.string "name"
-    t.datetime "start_time"
     t.text "meeting_information"
     t.integer "retention_time_days"
     t.string "admin_password"
@@ -35,7 +34,6 @@ ActiveRecord::Schema.define(version: 2021_02_12_120354) do
     t.index ["meeting_information"], name: "index_meetings_on_meeting_information"
     t.index ["name"], name: "index_meetings_on_name"
     t.index ["retention_time_days"], name: "index_meetings_on_retention_time_days"
-    t.index ["start_time"], name: "index_meetings_on_start_time"
   end
 
   create_table "participants", force: :cascade do |t|
@@ -80,15 +78,15 @@ ActiveRecord::Schema.define(version: 2021_02_12_120354) do
 
   create_table "votings", force: :cascade do |t|
     t.text "text"
-    t.boolean "anonymous", default: false
+    t.boolean "secret", default: false
     t.integer "meeting_id"
     t.integer "voting_type", default: 0, null: false
     t.time "start_time"
     t.time "end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["anonymous"], name: "index_votings_on_anonymous"
     t.index ["meeting_id"], name: "index_votings_on_meeting_id"
+    t.index ["secret"], name: "index_votings_on_secret"
     t.index ["text"], name: "index_votings_on_text"
     t.index ["voting_type"], name: "index_votings_on_voting_type"
   end

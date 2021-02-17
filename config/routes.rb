@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get    'admin/voting/stop', to: "meetings#stop_voting", as: 'stop_voting'
 
   get    'admin/participants/:participant_id/permit', to: "meetings#permit_participant", as: 'permit_participant'
+  delete 'admin/participants/:participant_id', to: "meetings#destroy_participant", as: 'destroy_participant'
 
   get    'admin/votings/new', to: "votings#new", as: 'new_voting'
   get   'admin/votings/:voting_id/votes', to: "votings#votes", as: 'votes'

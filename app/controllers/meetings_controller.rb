@@ -79,6 +79,8 @@ class MeetingsController < ApplicationController
           ballot.voting = @meeting.active_voting
           ballot.submitted = false
           ballot.save!
+
+          ParticipantNotificationsChannel.broadcast_to p, { message: "voting_started" }          
         end
 
         redirect_to manage_meeting_path() and return
@@ -90,8 +92,17 @@ class MeetingsController < ApplicationController
     respond_to do |format|
       format.html {
         get_meeting()
+
+        # send meeting ended notification
+        @meeting.active_voting.ballots.each do |b|
+          ParticipantNotificationsChannel.broadcast_to b.participant, { message: "voting_ended" }          
+        end
+
         @meeting.active_voting = nil
         @meeting.save!
+
+        ParticipantNotificationsChannel.broadcast_to p, { message: "refresh" }          
+
         redirect_to manage_meeting_path() and return
       }
     end
@@ -122,6 +133,23 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def destroy_participant
+    respond_to do |format|
+      format.html {
+        begin
+          get_meeting()
+          p = @meeting.participants.find_by_id(params[:participant_id])
+          p.destroy! if p.present?
+          ParticipantNotificationsChannel.broadcast_to p, { message: "removed" }
+        rescue => ex
+        ensure
+          session.delete(:meeting_id)
+        end
+        redirect_to new_meeting_path() and return
+      }
+    end
+  end
+
   def participants
     respond_to do |format|
       format.js {
@@ -142,7 +170,6 @@ class MeetingsController < ApplicationController
     respond_to do |format|
       format.html {
         begin
-          flash.clear
           if params[:meeting_code].present?
             @meeting = Meeting.where(passcode: params[:meeting_code]).first
 
@@ -201,6 +228,11 @@ class MeetingsController < ApplicationController
     respond_to do |format|
       format.html {
         get_participant()
+        if @participant.blank?
+          flash[:error] = _('No participant information was found. Maybe you have been removed from the meeting?')
+          redirect_to join_meeting_path() and return
+        end
+
         if @participant.permitted?
           redirect_to participate_path() and return
         end
@@ -242,10 +274,20 @@ class MeetingsController < ApplicationController
       format.html {
         begin
           get_participating_meeting()
+          if @meeting.blank?
+            flash[:error] = _('No meeting information was found.')
+            redirect_to join_meeting_path() and return
+          end
+
           get_participant()
+          if @participant.blank?
+            flash[:error] = _('No participant information was found. Maybe you have been removed from the meeting?')
+            redirect_to join_meeting_path() and return
+          end
+
         rescue => ex
-          handle_exception(request, ex, _('Failed to create voting.'))
-          redirect_to manage_meeting_path() and return
+          handle_exception(request, ex, _('Failed to participate in meeting.'))
+          redirect_to join_meeting_path() and return
         end
       }
     end
@@ -256,7 +298,17 @@ class MeetingsController < ApplicationController
       format.html {
         begin
           get_participating_meeting()
+          if @meeting.blank?
+            flash[:error] = _('No meeting information was found. Maybe it has already been removed?')
+            redirect_to join_meeting_path() and return
+          end
+
           get_participant()
+          if @participant.blank?
+            flash[:error] = _('No participant information was found. Maybe you have been removed from the meeting?')
+            redirect_to join_meeting_path() and return
+          end
+
           @participant.time_of_leaving = Time.now
           @participant.save!
           ManagementNotificationsChannel.broadcast_to @meeting, { message: "participant_left" }
@@ -299,9 +351,9 @@ class MeetingsController < ApplicationController
             vote = Vote.new
             vote.voting = @voting
             vote.amount = @participant.num_votes
-            unless @meeting.active_voting.anonymous?
+            unless @meeting.active_voting.secret?
               vote.ballot = ballot
-            end # else we leave the ballot empty since this was an anonymous vote
+            end # else we leave the ballot empty since this was an secret ballot
             vote.voting_options << @voting.voting_options.where(id: vote_params[:option_ids])
             vote.save!
 

@@ -6,7 +6,7 @@
             <div class="actions">
             <%= link_to fa_icon('edit'), edit_voting_path(voting.id) %>
             <% if @meeting.active_voting == voting %>
-            <%= link_to fa_icon('stop'), stop_voting_path() %>
+            <%= link_to fa_icon('stop'), stop_voting_path(), data: { confirm: _('Are you sure you want to end the voting?') } %>
             <% else %>
             <%= link_to fa_icon('play'), start_voting_path(voting.id) %>
             <% end %>
@@ -19,8 +19,8 @@
     </div>
     <div class="card-body collapse" id="voting-<%= voting.id -%>-details">
         <div class="d-flex justify-content-between p-1">
-            <div><%= _('Voting|Anonymous') %></div>
-            <div><%= voting.anonymous? ? _('Yes') : _('No') %></div>
+            <div><%= _('Voting|Secret') %></div>
+            <div><%= voting.secret? ? _('Yes') : _('No') %></div>
         </div>
         <div class="d-flex justify-content-between p-1">
             <div><%= _('Voting|Voting type') %></div>

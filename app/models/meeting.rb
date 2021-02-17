@@ -7,7 +7,6 @@ class Meeting < ApplicationRecord
     belongs_to :active_voting, class_name: 'Voting', optional: true
 
     validates :name, presence: true
-    validates :start_time, presence: true
 
     def generate_admin_token
         pwd = TOKEN_CHARS.sort_by { rand }.join[0...16]

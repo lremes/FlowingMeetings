@@ -26,6 +26,8 @@ App.cable.subscriptions.create(
       case 'refresh':
         location.reload();
         break;
+      case 'removed':
+        location.reload();
       default:
         console.log('Unsupported message:', data);
       }
