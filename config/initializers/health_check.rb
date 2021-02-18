@@ -68,7 +68,7 @@ if defined?(Rails::Server)
 		# When redis url is non-standard
 		#unless Rails.application.config.respond_to?(:redis_session_url)
 		config.standard_checks << 'redis'
-		config.redis_url = ENV.fetch('REDIS_URL', 'redis://redis:6379/0')
+		config.redis_url = ENV.fetch('REDIS_URL', 'redis://localhost:6379/0')
 		#end
 	end
 end
