@@ -10,7 +10,14 @@ class MeetingsController < ApplicationController
   def manage
     respond_to do |format|
       format.html {
-        get_meeting()
+        begin
+          flash.clear
+          get_meeting()
+        rescue => ex
+          handle_exception(request, ex, _('Failed to sign in.'))
+          flash[:error] = ex.message
+          redirect_to new_meeting_path() and return
+        end
       }
     end
   end
@@ -313,11 +320,10 @@ class MeetingsController < ApplicationController
           @participant.save!
           ManagementNotificationsChannel.broadcast_to @meeting, { message: "participant_left" }
           reset_session
-          redirect_to '/' and return
         rescue => ex
-          handle_exception(request, ex, _('Failed to create voting.'))
-          redirect_to manage_meeting_path() and return
+          handle_exception(request, ex, _('Failed to leave meeting.'))
         end
+        redirect_to '/' and return
       }
     end
   end
@@ -376,6 +382,7 @@ class MeetingsController < ApplicationController
   end
 
   def get_meeting
+    raise _('You are not signed in into a meeting.') if session[:meeting_id].blank?
     @meeting = Meeting.find_by_id(session[:meeting_id])
     if @meeting.nil? 
       flash[:warning] = _('Meeting not found.')

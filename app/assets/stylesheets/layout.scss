@@ -13,6 +13,10 @@ $theme-colors: (
     flex: 1;
 }
 
+h1 {
+    size: 2rem;
+}
+
 @media (max-width: 768px) {
     .content {
         padding: 1rem;

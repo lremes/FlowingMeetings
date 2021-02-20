@@ -8,6 +8,10 @@
 
 <hr>
 <h1><%= _('Manage a meeting') %></h1>
+<% if flash[:error].present? %>
+<div class="border-rounded text-danger p-1"><%= flash[:error] %></div>
+<% end %>
+
 <%= form_with url: admin_login_path(), authenticity_token: true do |f| %>
 	<%= render partial: 'layouts/form_guide' %>
 	<%= f.label _('Meeting|Admin password') -%> <%= f.text_field :meeting_password %>
