@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-02-20 11:35+0200\n"
+"PO-Revision-Date: 2021-02-20 16:03+0200\n"
 "Language-Team: Finnish\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -35,6 +35,9 @@ msgstr "Haluatko varmasti päättää äänestyksen?"
 
 msgid "Are you sure you want to remove the participant?"
 msgstr "Haluatko varmasti poistaa osallistujan?"
+
+msgid "Are you sure you want to restart the voting? This will delete any previous votes."
+msgstr ""
 
 msgid "Back to meeting"
 msgstr "Takaisin kokoukseen"
@@ -75,6 +78,9 @@ msgstr "Luo uusi kokous"
 msgid "Create a new voting"
 msgstr "Lisää uusi äänestys"
 
+msgid "Delete meeting"
+msgstr "Poista kokous"
+
 msgid "Edit voting"
 msgstr "Muokkaa äänestystä"
 
@@ -98,6 +104,9 @@ msgstr "Äänestyksen luonti epäonnistui."
 
 msgid "Failed to join meeting."
 msgstr "Kokoukseen liittyminen epäonnistui."
+
+msgid "Failed to leave meeting."
+msgstr "Kokouksesta poistuminen epäonnistui."
 
 msgid "Failed to participate in meeting."
 msgstr "Kokoukseen osallistuminen epäonnistui."
@@ -189,6 +198,9 @@ msgstr "Säilytysaika"
 msgid "Meeting|Retention time days|hint"
 msgstr "Aika, jonka kokouksen tiedot säilytetään. Säilytysajan jälkeen kokouksen tiedot poistetaan automaattisesti."
 
+msgid "Missing ballots"
+msgstr "Puuttuvat äänestyslipukkeet"
+
 msgid "Name '%{name}' is already taken. Please choose another name."
 msgstr "Nimi '%{name}' on jo varattu. Ole hyvä ja valitse toinen nimi."
 
@@ -204,8 +216,14 @@ msgstr "Kokoustietoja ei löytynyt."
 msgid "No meeting information was found. Maybe it has already been removed?"
 msgstr "Kokoustietoja ei löytynyt. Ehkä se on jo poistettu?"
 
+msgid "No one has joined the meeting."
+msgstr "Kukaan ei ole liittynyt kokoukseen."
+
 msgid "No participant information was found. Maybe you have been removed from the meeting?"
 msgstr "Osallistujatietoja ei löytynyt. Ehkä sinut on poistettu kokouksesta?"
+
+msgid "No voting have been created."
+msgstr "Vielä ei ole lisätty yhtään äänestystä."
 
 msgid "No voting in progress."
 msgstr "Äänestyksiä ei ole käynnissä."
@@ -351,6 +369,9 @@ msgstr "Annetut äänet"
 msgid "The page you are looking for does not exist. Please check the URL."
 msgstr "Sivua ei löydy. Tarkista osoite."
 
+msgid "URL to join the meeting:"
+msgstr "Linkki liittymistä varten:"
+
 msgid "Unauthorized"
 msgstr "Pääsy kielletty"
 
@@ -473,6 +494,9 @@ msgstr "Sinulla ei ole oikeutta osallistua käynnissä olevaan äänestykseen."
 
 msgid "You are not authorized to access the requested page or feature."
 msgstr "Sinulla ei ole pääsyä tähän toimintoon."
+
+msgid "You are not signed in into a meeting."
+msgstr ""
 
 msgid "You can only delete participants that have not cast any votes."
 msgstr "Voit poistaa vain osallistujia, jotka eivät ole äänestäneet."

@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-02-20 11:34+0200\n"
+"PO-Revision-Date: 2021-02-20 16:04+0200\n"
 "Language-Team: English\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"POT-Creation-Date: \n"
 "Last-Translator: Lars Remes <lars.remes@lawly.fi>\n"
 "X-Generator: Poedit 2.4.2\n"
+"POT-Creation-Date: \n"
 
 msgid "Add new voting"
 msgstr "Add new voting"
@@ -35,6 +35,9 @@ msgstr "Are you sure you want to end the voting?"
 
 msgid "Are you sure you want to remove the participant?"
 msgstr "Are you sure you want to remove the participant?"
+
+msgid "Are you sure you want to restart the voting? This will delete any previous votes."
+msgstr "Are you sure you want to restart the voting? This will delete any previous votes."
 
 msgid "Back to meeting"
 msgstr "Back to meeting"
@@ -75,6 +78,9 @@ msgstr "Create a new meeting"
 msgid "Create a new voting"
 msgstr "Create a new voting"
 
+msgid "Delete meeting"
+msgstr "Delete meeting"
+
 msgid "Edit voting"
 msgstr "Edit voting"
 
@@ -98,6 +104,9 @@ msgstr "Failed to create voting."
 
 msgid "Failed to join meeting."
 msgstr "Failed to join meeting."
+
+msgid "Failed to leave meeting."
+msgstr "Failed to leave the meeting."
 
 msgid "Failed to participate in meeting."
 msgstr "Failed to participate in meeting."
@@ -189,6 +198,9 @@ msgstr "Retention time"
 msgid "Meeting|Retention time days|hint"
 msgstr "How long the meeting information is kept after the meeting has been created."
 
+msgid "Missing ballots"
+msgstr "Missing ballots"
+
 msgid "Name '%{name}' is already taken. Please choose another name."
 msgstr "Name '%{name}' is already taken. Please choose another name."
 
@@ -204,8 +216,14 @@ msgstr "No meeting information was found."
 msgid "No meeting information was found. Maybe it has already been removed?"
 msgstr "No meeting information was found. Maybe it has already been removed?"
 
+msgid "No one has joined the meeting."
+msgstr "No one has joined the meeting."
+
 msgid "No participant information was found. Maybe you have been removed from the meeting?"
 msgstr "No participant information was found. Maybe you have been removed from the meeting?"
+
+msgid "No voting have been created."
+msgstr "No votings have been created."
 
 msgid "No voting in progress."
 msgstr "No voting in progress."
@@ -351,6 +369,9 @@ msgstr "Submitted votes"
 msgid "The page you are looking for does not exist. Please check the URL."
 msgstr "The page you are looking for does not exist. Please check the URL."
 
+msgid "URL to join the meeting:"
+msgstr "URL for joining the meeting:"
+
 msgid "Unauthorized"
 msgstr "Unauthorized"
 
@@ -473,6 +494,9 @@ msgstr "You are not allowed to participate in this vote."
 
 msgid "You are not authorized to access the requested page or feature."
 msgstr "You are not authorized to access the requested page or feature."
+
+msgid "You are not signed in into a meeting."
+msgstr "You are not signed in into a meeting."
 
 msgid "You can only delete participants that have not cast any votes."
 msgstr "You can only delete participants that have not cast any votes."

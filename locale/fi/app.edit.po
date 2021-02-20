@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-02-20 10:50+0200\n"
+"PO-Revision-Date: 2021-02-20 11:35+0200\n"
 "Language-Team: Finnish\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Lars Remes <lars.remes@lawly.fi>\n"
 "X-Generator: Poedit 2.4.2\n"
-"POT-Creation-Date: 2021-02-20 10:51+0200\n"
+"POT-Creation-Date: 2021-02-20 15:50+0200\n"
 
 msgid "Add new voting"
 msgstr "Lisää äänestys"
@@ -24,20 +24,20 @@ msgstr "Lisää äänestys"
 msgid "Anonymous"
 msgstr "Suljettu äänestys"
 
-#, fuzzy
 msgid "Are you sure you want delete this meeting?"
-msgstr "Haluatko varmasti poistaa äänestyksen?"
+msgstr "Haluatko varmasti poistaa tämän kokouksen?"
 
 msgid "Are you sure you want to delete the voting?"
 msgstr "Haluatko varmasti poistaa äänestyksen?"
 
-#, fuzzy
 msgid "Are you sure you want to end the voting?"
-msgstr "Haluatko varmasti poistaa äänestyksen?"
+msgstr "Haluatko varmasti päättää äänestyksen?"
 
-#, fuzzy
 msgid "Are you sure you want to remove the participant?"
-msgstr "Haluatko varmasti poistaa äänestyksen?"
+msgstr "Haluatko varmasti poistaa osallistujan?"
+
+msgid "Are you sure you want to restart the voting? This will delete any previous votes."
+msgstr ""
 
 msgid "Back to meeting"
 msgstr "Takaisin kokoukseen"
@@ -78,6 +78,10 @@ msgstr "Luo uusi kokous"
 msgid "Create a new voting"
 msgstr "Lisää uusi äänestys"
 
+#, fuzzy
+msgid "Delete meeting"
+msgstr "Poistu kokouksesta"
+
 msgid "Edit voting"
 msgstr "Muokkaa äänestystä"
 
@@ -103,15 +107,17 @@ msgid "Failed to join meeting."
 msgstr "Kokoukseen liittyminen epäonnistui."
 
 #, fuzzy
-msgid "Failed to participate in meeting."
+msgid "Failed to leave meeting."
 msgstr "Kokouksen luonti epäonnistui."
+
+msgid "Failed to participate in meeting."
+msgstr "Kokoukseen osallistuminen epäonnistui."
 
 msgid "Failed to show cast votes."
 msgstr "Annettujen äänien näyttäminen epäonnistui."
 
-#, fuzzy
 msgid "Failed to sign in."
-msgstr "Sisäänkirjautuminen epäonnistui."
+msgstr "Kirjautuminen epäonnistui."
 
 msgid "Fields with an asterisk (*) are mandatory"
 msgstr "Pakolliset kentät on merkitty (*)"
@@ -122,9 +128,8 @@ msgstr "Kielletty"
 msgid "Identify participant"
 msgstr "Tunnista osallistuja"
 
-#, fuzzy
 msgid "Identify yourself to the meeting organiser by passing this code to them for validation:"
-msgstr "Tunnista itsesi kokouksen järjestäjälle välittämällä heille tämä koodi: %{code}"
+msgstr "Tunnistaudu kokouksen järjestäjälle välittämällä heille tämä koodi: %{code}"
 
 msgid "Internal server error"
 msgstr "Palvelinvirhe"
@@ -144,9 +149,8 @@ msgstr "Poistu kokouksesta"
 msgid "Left the meeting at %{time}"
 msgstr "Poistui %{time}"
 
-#, fuzzy
 msgid "Manage a meeting"
-msgstr "Hallinnoi kokousta"
+msgstr "Kokouksen hallinta"
 
 msgid "Manage meeting"
 msgstr "Hallinnoi kokousta"
@@ -154,9 +158,8 @@ msgstr "Hallinnoi kokousta"
 msgid "Meeting"
 msgstr "Kokous"
 
-#, fuzzy
 msgid "Meeting not found."
-msgstr "Kokous"
+msgstr "Kokousta ei löytynyt."
 
 msgid "Meetings"
 msgstr "Kokoukset"
@@ -171,7 +174,7 @@ msgid "Meeting|Admin password"
 msgstr "Hallinnointisalasana"
 
 msgid "Meeting|Admin password|hint"
-msgstr "Salasana, jolla pääset hallinnoimaan kokousta."
+msgstr "Salasana, jolla pääset hallinnoimaan kokousta. Kopio koodi ja laite se talteen mikäli sinun tarvitsee päästä kokouksen tietoihin käsiksi jälkikäteen."
 
 msgid "Meeting|Meeting information"
 msgstr "Kokouksen tiedot"
@@ -197,8 +200,11 @@ msgstr "Säilytysaika"
 msgid "Meeting|Retention time days|hint"
 msgstr "Aika, jonka kokouksen tiedot säilytetään. Säilytysajan jälkeen kokouksen tiedot poistetaan automaattisesti."
 
-msgid "Name '%{name}' is already taken. Please choose another name."
+msgid "Missing ballots"
 msgstr ""
+
+msgid "Name '%{name}' is already taken. Please choose another name."
+msgstr "Nimi '%{name}' on jo varattu. Ole hyvä ja valitse toinen nimi."
 
 msgid "Next"
 msgstr "Seuraava"
@@ -206,16 +212,21 @@ msgstr "Seuraava"
 msgid "No"
 msgstr "Ei"
 
-#, fuzzy
 msgid "No meeting information was found."
-msgstr "Ei"
+msgstr "Kokoustietoja ei löytynyt."
 
-#, fuzzy
 msgid "No meeting information was found. Maybe it has already been removed?"
-msgstr "Ei"
+msgstr "Kokoustietoja ei löytynyt. Ehkä se on jo poistettu?"
 
 #, fuzzy
+msgid "No one has joined the meeting."
+msgstr "Ei"
+
 msgid "No participant information was found. Maybe you have been removed from the meeting?"
+msgstr "Osallistujatietoja ei löytynyt. Ehkä sinut on poistettu kokouksesta?"
+
+#, fuzzy
+msgid "No voting have been created."
 msgstr "Ei"
 
 msgid "No voting in progress."
@@ -266,9 +277,8 @@ msgstr ""
 msgid "PageTitle|active_storage/representations/redirect"
 msgstr ""
 
-#, fuzzy
 msgid "PageTitle|assets"
-msgstr "Virhe!"
+msgstr "Assets"
 
 msgid "PageTitle|errors"
 msgstr "Virhe!"
@@ -298,7 +308,7 @@ msgid "PageTitle|rails/welcome"
 msgstr ""
 
 msgid "PageTitle|votings"
-msgstr ""
+msgstr "Äänestykset"
 
 msgid "Participant"
 msgstr "Osallistuja"
@@ -352,7 +362,7 @@ msgid "Save"
 msgstr "Tallenna"
 
 msgid "Sign in"
-msgstr ""
+msgstr "Kirjaudu sisään"
 
 msgid "Submit vote"
 msgstr "Anna äänesi"
@@ -362,6 +372,9 @@ msgstr "Annetut äänet"
 
 msgid "The page you are looking for does not exist. Please check the URL."
 msgstr "Sivua ei löydy. Tarkista osoite."
+
+msgid "URL to join the meeting:"
+msgstr ""
 
 msgid "Unauthorized"
 msgstr "Pääsy kielletty"
@@ -453,13 +466,11 @@ msgstr "Kokous, johon äänestys kuuluu."
 msgid "Voting|Options"
 msgstr "Äänestysvaihtoehdot"
 
-#, fuzzy
 msgid "Voting|Secret"
-msgstr "Äänestys"
+msgstr "Suljettu äänestys"
 
-#, fuzzy
 msgid "Voting|Secret|hint"
-msgstr "Äänestys"
+msgstr "Kyseessä on suljettu lippuäänestys"
 
 msgid "Voting|Start time"
 msgstr "Aloitusaika"
@@ -488,8 +499,11 @@ msgstr "Sinulla ei ole oikeutta osallistua käynnissä olevaan äänestykseen."
 msgid "You are not authorized to access the requested page or feature."
 msgstr "Sinulla ei ole pääsyä tähän toimintoon."
 
-msgid "You can only delete participants that have not cast any votes."
+msgid "You are not signed in into a meeting."
 msgstr ""
+
+msgid "You can only delete participants that have not cast any votes."
+msgstr "Voit poistaa vain osallistujia, jotka eivät ole äänestäneet."
 
 msgid "You do not have permission access the requested page or feature."
 msgstr "Sinulla ei ole pääsyä pyydettyyn sivuun tai toimintoon."
@@ -507,16 +521,13 @@ msgid "errors.models.participant.attributes.name.blank"
 msgstr "Nimi ei voi olla tyhjä"
 
 msgid "logout"
-msgstr ""
+msgstr "Kirjaudu ulos"
 
 msgid "multiple_choice"
-msgstr ""
+msgstr "Monivalinta"
 
 msgid "save"
 msgstr "tallenna"
 
 msgid "single_choice"
-msgstr ""
-
-#~ msgid "Failed to login."
-#~ msgstr "Sisäänkirjautuminen epäonnistui."
+msgstr "Valitse yksi"
