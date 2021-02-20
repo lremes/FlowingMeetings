@@ -7,16 +7,17 @@
 	<%= f.input :admin_password, as: :string, :input_html => { :disabled => true } %>
 	<%= f.submit _('Save') %>
 <% end %>
+<%= _('URL to join the meeting:') -%> <%= link_to join_meeting_url(), join_meeting_url(), target: '_blank' %>
 
 <h2 class="mt-4"><%= _('Participants') %></h2>
 <ul class="list-group mb-2" id="participants">
-<%= render partial: 'participant', collection: @meeting.participants %>
+<%= render( partial: 'participant', collection: @meeting.participants ) || _('No one has joined the meeting.') %>
 </ul>
 
 <h2 class="mt-4"><%= _('Votings') %></h2>
 <%= link_to _('Add new voting'), new_voting_path() %>
-<ul class="list-group mb-2" id="votings">
-<%= render partial: 'voting', collection: @meeting.votings %>
+<ul class="list-group mt-2 mb-2" id="votings">
+<%= render(partial: 'voting', collection: @meeting.votings) || _('No voting have been created.') %>
 </ul>
 
 <script type="text/javascript">

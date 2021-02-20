@@ -7,489 +7,499 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-02-13 21:16+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-02-20 11:34+0200\n"
 "Language-Team: English\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"\n"
+"POT-Creation-Date: \n"
+"Last-Translator: Lars Remes <lars.remes@lawly.fi>\n"
+"X-Generator: Poedit 2.4.2\n"
 
 msgid "Add new voting"
-msgstr ""
+msgstr "Add new voting"
 
 msgid "Anonymous"
-msgstr ""
+msgstr "Anonymous"
 
 msgid "Are you sure you want delete this meeting?"
-msgstr ""
+msgstr "Are you sure you want delete this meeting?"
 
 msgid "Are you sure you want to delete the voting?"
-msgstr ""
+msgstr "Are you sure you want to delete the voting?"
 
-msgid "Are you sure you want to remove the participant? It will also delete any cast votes."
-msgstr ""
+msgid "Are you sure you want to end the voting?"
+msgstr "Are you sure you want to end the voting?"
+
+msgid "Are you sure you want to remove the participant?"
+msgstr "Are you sure you want to remove the participant?"
 
 msgid "Back to meeting"
-msgstr ""
+msgstr "Back to meeting"
 
 msgid "Ballot"
-msgstr ""
+msgstr "Ballot"
 
 msgid "Ballots"
-msgstr ""
+msgstr "Ballots"
 
 msgid "Ballot|Participant"
-msgstr ""
+msgstr "Participant"
 
 msgid "Ballot|Participant|hint"
-msgstr ""
+msgstr "The participant who cast this ballot"
 
 msgid "Ballot|Submitted"
-msgstr ""
+msgstr "Ballot|Submitted"
 
 msgid "Ballot|Submitted|hint"
-msgstr ""
+msgstr "Ballot|Submitted|hint"
 
 msgid "Ballot|Voting"
-msgstr ""
+msgstr "Ballot|Voting"
 
 msgid "Ballot|Voting|hint"
-msgstr ""
+msgstr "Ballot|Voting|hint"
 
 msgid "Cast ballots"
-msgstr ""
+msgstr "Cast ballots"
 
 msgid "Click to expand/collapse"
-msgstr ""
+msgstr "Click to expand/collapse"
 
 msgid "Create a new meeting"
-msgstr ""
+msgstr "Create a new meeting"
 
 msgid "Create a new voting"
-msgstr ""
+msgstr "Create a new voting"
 
 msgid "Edit voting"
-msgstr ""
+msgstr "Edit voting"
 
 msgid "Enter participant information"
-msgstr ""
+msgstr "Enter participant information"
 
 msgid "Errors|Forbidden"
-msgstr ""
+msgstr "Forbidden"
 
 msgid "Errors|Unauthorized"
-msgstr ""
+msgstr "Unauthorized"
 
 msgid "Errors|not_found"
-msgstr ""
+msgstr "Not found"
 
 msgid "Failed to create meeting."
-msgstr ""
+msgstr "Failed to create meeting."
 
 msgid "Failed to create voting."
-msgstr ""
+msgstr "Failed to create voting."
 
 msgid "Failed to join meeting."
-msgstr ""
+msgstr "Failed to join meeting."
 
-msgid "Failed to login."
-msgstr ""
+msgid "Failed to participate in meeting."
+msgstr "Failed to participate in meeting."
 
 msgid "Failed to show cast votes."
-msgstr ""
+msgstr "Failed to show cast votes."
+
+msgid "Failed to sign in."
+msgstr "Failed to sign in."
 
 msgid "Fields with an asterisk (*) are mandatory"
-msgstr ""
+msgstr "Fields with an asterisk (*) are mandatory"
 
 msgid "Forbidden"
-msgstr ""
+msgstr "Forbidden"
 
 msgid "Identify participant"
-msgstr ""
+msgstr "Identify participant"
 
 msgid "Identify yourself to the meeting organiser by passing this code to them for validation:"
-msgstr ""
+msgstr "Identify yourself to the meeting organiser by passing this code to them for validation:"
 
 msgid "Internal server error"
-msgstr ""
+msgstr "Internal server error"
 
 msgid "Invalid meeting code"
-msgstr ""
+msgstr "Invalid meeting code"
 
 msgid "Join a meeting"
-msgstr ""
+msgstr "Join a meeting"
 
 msgid "Join meeting"
-msgstr ""
+msgstr "Join meeting"
 
 msgid "Leave meeting"
-msgstr ""
+msgstr "Leave meeting"
 
 msgid "Left the meeting at %{time}"
-msgstr ""
-
-msgid "Login"
-msgstr ""
+msgstr "Left the meeting at %{time}"
 
 msgid "Manage a meeting"
-msgstr ""
+msgstr "Manage a meeting"
 
 msgid "Manage meeting"
-msgstr ""
+msgstr "Manage meeting"
 
 msgid "Meeting"
-msgstr ""
+msgstr "Meeting"
 
 msgid "Meeting not found."
-msgstr ""
+msgstr "Meeting not found."
 
 msgid "Meetings"
-msgstr ""
+msgstr "Meetings"
 
 msgid "Meeting|Active voting"
-msgstr ""
+msgstr "Meeting|Active voting"
 
 msgid "Meeting|Active voting|hint"
-msgstr ""
+msgstr "Meeting|Active voting|hint"
 
 msgid "Meeting|Admin password"
-msgstr ""
+msgstr "Admin password"
 
 msgid "Meeting|Admin password|hint"
-msgstr ""
+msgstr "You can use this password to return to this management view. Copy and save it somewhere if you need to access the meeting information afterwards."
 
 msgid "Meeting|Meeting information"
-msgstr ""
+msgstr "Meeting|Meeting information"
 
 msgid "Meeting|Meeting information|hint"
-msgstr ""
+msgstr "Meeting|Meeting information|hint"
 
 msgid "Meeting|Name"
-msgstr ""
+msgstr "Name"
 
 msgid "Meeting|Name|hint"
-msgstr ""
+msgstr "Name of the meeting"
 
 msgid "Meeting|Passcode"
-msgstr ""
+msgstr "Passcode"
 
 msgid "Meeting|Passcode|hint"
-msgstr ""
+msgstr "Participants use this passcode to join the meeting."
 
 msgid "Meeting|Retention time days"
-msgstr ""
+msgstr "Retention time"
 
 msgid "Meeting|Retention time days|hint"
-msgstr ""
-
-msgid "Meeting|Start time"
-msgstr ""
-
-msgid "Meeting|Start time|hint"
-msgstr ""
+msgstr "How long the meeting information is kept after the meeting has been created."
 
 msgid "Name '%{name}' is already taken. Please choose another name."
-msgstr ""
+msgstr "Name '%{name}' is already taken. Please choose another name."
 
 msgid "Next"
-msgstr ""
+msgstr "Next"
 
 msgid "No"
-msgstr ""
+msgstr "No"
+
+msgid "No meeting information was found."
+msgstr "No meeting information was found."
+
+msgid "No meeting information was found. Maybe it has already been removed?"
+msgstr "No meeting information was found. Maybe it has already been removed?"
+
+msgid "No participant information was found. Maybe you have been removed from the meeting?"
+msgstr "No participant information was found. Maybe you have been removed from the meeting?"
 
 msgid "No voting in progress."
-msgstr ""
+msgstr "No voting in progress."
 
 msgid "Not found"
-msgstr ""
+msgstr "Not found"
 
 msgid "Number of votes"
-msgstr ""
+msgstr "Number of votes"
 
 msgid "Oops! You found a bug!"
-msgstr ""
+msgstr "Oops! You found a bug!"
 
 msgid "Options"
-msgstr ""
+msgstr "Options"
 
 msgid "PageTitle|action_mailbox/ingresses/mailgun/inbound_emails"
-msgstr ""
+msgstr "PageTitle|action_mailbox/ingresses/mailgun/inbound_emails"
 
 msgid "PageTitle|action_mailbox/ingresses/mandrill/inbound_emails"
-msgstr ""
+msgstr "PageTitle|action_mailbox/ingresses/mandrill/inbound_emails"
 
 msgid "PageTitle|action_mailbox/ingresses/postmark/inbound_emails"
-msgstr ""
+msgstr "PageTitle|action_mailbox/ingresses/postmark/inbound_emails"
 
 msgid "PageTitle|action_mailbox/ingresses/relay/inbound_emails"
-msgstr ""
+msgstr "PageTitle|action_mailbox/ingresses/relay/inbound_emails"
 
 msgid "PageTitle|action_mailbox/ingresses/sendgrid/inbound_emails"
-msgstr ""
+msgstr "PageTitle|action_mailbox/ingresses/sendgrid/inbound_emails"
 
 msgid "PageTitle|active_storage/blobs/proxy"
-msgstr ""
+msgstr "PageTitle|active_storage/blobs/proxy"
 
 msgid "PageTitle|active_storage/blobs/redirect"
-msgstr ""
+msgstr "PageTitle|active_storage/blobs/redirect"
 
 msgid "PageTitle|active_storage/direct_uploads"
-msgstr ""
+msgstr "Storage"
 
 msgid "PageTitle|active_storage/disk"
-msgstr ""
+msgstr "Storage"
 
 msgid "PageTitle|active_storage/representations/proxy"
-msgstr ""
+msgstr "PageTitle|active_storage/representations/proxy"
 
 msgid "PageTitle|active_storage/representations/redirect"
-msgstr ""
+msgstr "PageTitle|active_storage/representations/redirect"
 
 msgid "PageTitle|assets"
-msgstr ""
+msgstr "Assets"
 
 msgid "PageTitle|errors"
-msgstr ""
+msgstr "Errors"
 
 msgid "PageTitle|health_check/health_check"
-msgstr ""
+msgstr "Health check"
 
 msgid "PageTitle|meetings"
-msgstr ""
+msgstr "PageTitle|meetings"
 
 msgid "PageTitle|rails/conductor/action_mailbox/inbound_emails"
-msgstr ""
+msgstr "PageTitle|rails/conductor/action_mailbox/inbound_emails"
 
 msgid "PageTitle|rails/conductor/action_mailbox/inbound_emails/sources"
-msgstr ""
+msgstr "PageTitle|rails/conductor/action_mailbox/inbound_emails/sources"
 
 msgid "PageTitle|rails/conductor/action_mailbox/reroutes"
-msgstr ""
+msgstr "PageTitle|rails/conductor/action_mailbox/reroutes"
 
 msgid "PageTitle|rails/info"
-msgstr ""
+msgstr "Rails info"
 
 msgid "PageTitle|rails/mailers"
-msgstr ""
+msgstr "Rails info"
 
 msgid "PageTitle|rails/welcome"
-msgstr ""
+msgstr "Rails info"
 
 msgid "PageTitle|votings"
-msgstr ""
+msgstr "PageTitle|votings"
 
 msgid "Participant"
-msgstr ""
+msgstr "Participant"
 
 msgid "Participants"
-msgstr ""
+msgstr "Participants"
 
 msgid "Participant|Meeting"
-msgstr ""
+msgstr "Participant|Meeting"
 
 msgid "Participant|Meeting|hint"
-msgstr ""
+msgstr "Participant|Meeting|hint"
 
 msgid "Participant|Name"
-msgstr ""
+msgstr "Name"
 
 msgid "Participant|Name|hint"
-msgstr ""
+msgstr "The name that is shown to meeting organiser."
 
 msgid "Participant|Num votes"
-msgstr ""
+msgstr "Participant|Num votes"
 
 msgid "Participant|Num votes|hint"
-msgstr ""
+msgstr "Participant|Num votes|hint"
 
 msgid "Participant|Permitted"
-msgstr ""
+msgstr "Participant|Permitted"
 
 msgid "Participant|Permitted|hint"
-msgstr ""
+msgstr "Participant|Permitted|hint"
 
 msgid "Participant|Time of leaving"
-msgstr ""
+msgstr "Time of leaving"
 
 msgid "Participant|Time of leaving|hint"
-msgstr ""
+msgstr "Time when the participant left the meeting."
 
 msgid "Participant|Token"
-msgstr ""
+msgstr "Participant|Token"
 
 msgid "Participant|Token|hint"
-msgstr ""
+msgstr "Participant|Token|hint"
 
 msgid "Please enter meeting code"
-msgstr ""
+msgstr "Please enter meeting code"
 
 msgid "Please enter the name you would like to show in the meeting participant list."
-msgstr ""
+msgstr "Please enter the name you would like to show in the meeting participant list."
 
 msgid "Save"
-msgstr ""
+msgstr "Save"
+
+msgid "Sign in"
+msgstr "Sign in"
 
 msgid "Submit vote"
-msgstr ""
+msgstr "Submit vote"
 
 msgid "Submitted votes"
-msgstr ""
+msgstr "Submitted votes"
 
 msgid "The page you are looking for does not exist. Please check the URL."
-msgstr ""
+msgstr "The page you are looking for does not exist. Please check the URL."
 
 msgid "Unauthorized"
-msgstr ""
+msgstr "Unauthorized"
 
 msgid "Vote"
-msgstr ""
+msgstr "Vote"
 
 msgid "Votes"
-msgstr ""
+msgstr "Votes"
 
 msgid "VotesVotingOption"
-msgstr ""
+msgstr "VotesVotingOption"
 
 msgid "VotesVotingOptions"
-msgstr ""
+msgstr "VotesVotingOptions"
 
 msgid "VotesVotingOption|Vote"
-msgstr ""
+msgstr "VotesVotingOption|Vote"
 
 msgid "VotesVotingOption|Vote|hint"
-msgstr ""
+msgstr "VotesVotingOption|Vote|hint"
 
 msgid "VotesVotingOption|Voting option"
-msgstr ""
+msgstr "VotesVotingOption|Voting option"
 
 msgid "VotesVotingOption|Voting option|hint"
-msgstr ""
+msgstr "VotesVotingOption|Voting option|hint"
 
 msgid "Vote|Amount"
-msgstr ""
+msgstr "Vote|Amount"
 
 msgid "Vote|Amount|hint"
-msgstr ""
+msgstr "Vote|Amount|hint"
 
 msgid "Vote|Ballot"
-msgstr ""
+msgstr "Vote|Ballot"
 
 msgid "Vote|Ballot|hint"
-msgstr ""
+msgstr "Vote|Ballot|hint"
 
 msgid "Vote|Voting"
-msgstr ""
+msgstr "Vote|Voting"
 
 msgid "Vote|Voting|hint"
-msgstr ""
+msgstr "Vote|Voting|hint"
 
 msgid "Voting"
-msgstr ""
+msgstr "Voting"
 
 msgid "Voting in progress."
-msgstr ""
+msgstr "Voting in progress."
 
 msgid "Voting is not active."
-msgstr ""
+msgstr "Voting is not active."
 
 msgid "VotingOption"
-msgstr ""
+msgstr "Voting Option"
 
 msgid "VotingOptions"
-msgstr ""
+msgstr "Voting Options"
 
 msgid "VotingOption|Text"
-msgstr ""
+msgstr "Option"
 
 msgid "VotingOption|Text|hint"
-msgstr ""
+msgstr "Text shown for this option during the voting."
 
 msgid "VotingOption|Voting"
-msgstr ""
+msgstr "VotingOption|Voting"
 
 msgid "VotingOption|Voting|hint"
-msgstr ""
+msgstr "VotingOption|Voting|hint"
 
 msgid "Votings"
-msgstr ""
-
-msgid "Voting|Anonymous"
-msgstr ""
-
-msgid "Voting|Anonymous|hint"
-msgstr ""
+msgstr "Votings"
 
 msgid "Voting|End time"
-msgstr ""
+msgstr "End time"
 
 msgid "Voting|End time|hint"
-msgstr ""
+msgstr "Time when the voting ended."
 
 msgid "Voting|Meeting"
-msgstr ""
+msgstr "Voting|Meeting"
 
 msgid "Voting|Meeting|hint"
-msgstr ""
+msgstr "Voting|Meeting|hint"
 
 msgid "Voting|Options"
-msgstr ""
+msgstr "Voting Options"
 
 msgid "Voting|Secret"
-msgstr ""
+msgstr "Secret ballot"
+
+msgid "Voting|Secret|hint"
+msgstr "Select this if this is a secret ballot, i.e., a ballot in which votes are cast in secret."
 
 msgid "Voting|Start time"
-msgstr ""
+msgstr "Start time"
 
 msgid "Voting|Start time|hint"
-msgstr ""
+msgstr "Time when this voting started."
 
 msgid "Voting|Text"
-msgstr ""
+msgstr "Subject"
 
 msgid "Voting|Text|hint"
-msgstr ""
+msgstr "Subject of the voting, i.e., the text that is shown to the voters."
 
 msgid "Voting|Voting type"
-msgstr ""
+msgstr "Voting type"
 
 msgid "Voting|Voting type|hint"
-msgstr ""
+msgstr "Type of the voting"
 
 msgid "Yes"
-msgstr ""
+msgstr "Yes"
 
 msgid "You are not allowed to participate in this vote."
-msgstr ""
+msgstr "You are not allowed to participate in this vote."
 
 msgid "You are not authorized to access the requested page or feature."
-msgstr ""
+msgstr "You are not authorized to access the requested page or feature."
+
+msgid "You can only delete participants that have not cast any votes."
+msgstr "You can only delete participants that have not cast any votes."
 
 msgid "You do not have permission access the requested page or feature."
-msgstr ""
+msgstr "You do not have permission access the requested page or feature."
 
 msgid "You have already submitted your vote."
-msgstr ""
+msgstr "You have already submitted your vote."
 
 msgid "You have already voted. Please waith for voting to end."
-msgstr ""
+msgstr "You have already voted. Please waith for voting to end."
 
 msgid "You have left the meeting."
-msgstr ""
+msgstr "You have left the meeting."
 
 msgid "errors.models.participant.attributes.name.blank"
-msgstr ""
+msgstr "Name cannot be blank"
 
 msgid "logout"
-msgstr ""
+msgstr "Sign out"
 
 msgid "multiple_choice"
-msgstr ""
+msgstr "Multiple choice"
 
 msgid "save"
-msgstr ""
+msgstr "save"
 
 msgid "single_choice"
-msgstr ""
+msgstr "Single choice"

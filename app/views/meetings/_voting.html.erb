@@ -8,10 +8,14 @@
             <% if @meeting.active_voting == voting %>
             <%= link_to fa_icon('stop'), stop_voting_path(), data: { confirm: _('Are you sure you want to end the voting?') } %>
             <% else %>
+            <% if voting.votes.present? %>
+            <%= link_to fa_icon('play'), start_voting_path(voting.id), data: { confirm: _('Are you sure you want to restart the voting? This will delete any previous votes.') } %>
+            <% else %>
             <%= link_to fa_icon('play'), start_voting_path(voting.id) %>
             <% end %>
+            <% end %>
             <%= link_to fa_icon('trash-alt'), destroy_voting_path(voting.id), remote: true, data: { method: 'delete', confirm: _('Are you sure you want to delete the voting?') } %>
-            <% if voting.votes.present? %>
+            <% if voting.ballots.present? %>
             <%= link_to fa_icon('poll'), votes_path(voting.id) %>
             <% end %>
             </div>

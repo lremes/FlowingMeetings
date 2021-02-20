@@ -1,8 +1,42 @@
-.content {
-    padding: 1rem;
-    min-width: 480px;
-    width: 80vw;
-    max-width: 960px;
+
+$theme-colors: (
+    "primary": #004882,
+    "secondary": #296CAA,
+    "warning": #e4a160,
+);
+
+[data-toggle="collapse"] {
+    cursor: pointer;
+}
+
+.flex-even {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 1rem;
+        width: 100%;
+    }    
+
+    #header-container {
+        img {
+            max-height: 56px !important;
+        }
+
+        .action {
+            font-size: 0.7rem;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .content {
+        padding: 1rem;
+        min-width: 480px;
+        width: 80vw;
+        max-width: 960px;
+    }
 }
 
 body {
@@ -12,3 +46,4 @@ body {
 #header-container {
     box-shadow: 0px 0px 10px black;
 }
+

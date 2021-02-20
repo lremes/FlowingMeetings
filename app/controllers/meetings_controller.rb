@@ -24,7 +24,7 @@ class MeetingsController < ApplicationController
 
           redirect_to manage_meeting_path()
         rescue => ex
-          handle_exception(request, ex, _('Failed to login.'))
+          handle_exception(request, ex, _('Failed to sign in.'))
           render action: 'new' and return
         end
       }
