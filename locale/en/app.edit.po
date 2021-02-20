@@ -29,7 +29,10 @@ msgstr ""
 msgid "Are you sure you want to delete the voting?"
 msgstr ""
 
-msgid "Are you sure you want to remove the participant? It will also delete any cast votes."
+msgid "Are you sure you want to end the voting?"
+msgstr ""
+
+msgid "Are you sure you want to remove the participant?"
 msgstr ""
 
 msgid "Back to meeting"
@@ -95,10 +98,13 @@ msgstr ""
 msgid "Failed to join meeting."
 msgstr ""
 
-msgid "Failed to login."
+msgid "Failed to participate in meeting."
 msgstr ""
 
 msgid "Failed to show cast votes."
+msgstr ""
+
+msgid "Failed to sign in."
 msgstr ""
 
 msgid "Fields with an asterisk (*) are mandatory"
@@ -129,9 +135,6 @@ msgid "Leave meeting"
 msgstr ""
 
 msgid "Left the meeting at %{time}"
-msgstr ""
-
-msgid "Login"
 msgstr ""
 
 msgid "Manage a meeting"
@@ -185,12 +188,6 @@ msgstr ""
 msgid "Meeting|Retention time days|hint"
 msgstr ""
 
-msgid "Meeting|Start time"
-msgstr ""
-
-msgid "Meeting|Start time|hint"
-msgstr ""
-
 msgid "Name '%{name}' is already taken. Please choose another name."
 msgstr ""
 
@@ -198,6 +195,15 @@ msgid "Next"
 msgstr ""
 
 msgid "No"
+msgstr ""
+
+msgid "No meeting information was found."
+msgstr ""
+
+msgid "No meeting information was found. Maybe it has already been removed?"
+msgstr ""
+
+msgid "No participant information was found. Maybe you have been removed from the meeting?"
 msgstr ""
 
 msgid "No voting in progress."
@@ -332,6 +338,9 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
+msgid "Sign in"
+msgstr ""
+
 msgid "Submit vote"
 msgstr ""
 
@@ -416,12 +425,6 @@ msgstr ""
 msgid "Votings"
 msgstr ""
 
-msgid "Voting|Anonymous"
-msgstr ""
-
-msgid "Voting|Anonymous|hint"
-msgstr ""
-
 msgid "Voting|End time"
 msgstr ""
 
@@ -438,6 +441,9 @@ msgid "Voting|Options"
 msgstr ""
 
 msgid "Voting|Secret"
+msgstr ""
+
+msgid "Voting|Secret|hint"
 msgstr ""
 
 msgid "Voting|Start time"
@@ -465,6 +471,9 @@ msgid "You are not allowed to participate in this vote."
 msgstr ""
 
 msgid "You are not authorized to access the requested page or feature."
+msgstr ""
+
+msgid "You can only delete participants that have not cast any votes."
 msgstr ""
 
 msgid "You do not have permission access the requested page or feature."

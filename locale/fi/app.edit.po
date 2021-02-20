@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-02-14 11:21+0200\n"
+"PO-Revision-Date: 2021-02-20 10:50+0200\n"
 "Language-Team: Finnish\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Lars Remes <lars.remes@lawly.fi>\n"
 "X-Generator: Poedit 2.4.2\n"
+"POT-Creation-Date: 2021-02-20 10:51+0200\n"
 
 msgid "Add new voting"
 msgstr "Lisää äänestys"
@@ -30,8 +31,13 @@ msgstr "Haluatko varmasti poistaa äänestyksen?"
 msgid "Are you sure you want to delete the voting?"
 msgstr "Haluatko varmasti poistaa äänestyksen?"
 
-msgid "Are you sure you want to remove the participant? It will also delete any cast votes."
-msgstr ""
+#, fuzzy
+msgid "Are you sure you want to end the voting?"
+msgstr "Haluatko varmasti poistaa äänestyksen?"
+
+#, fuzzy
+msgid "Are you sure you want to remove the participant?"
+msgstr "Haluatko varmasti poistaa äänestyksen?"
 
 msgid "Back to meeting"
 msgstr "Takaisin kokoukseen"
@@ -61,7 +67,7 @@ msgid "Ballot|Voting|hint"
 msgstr "Äänestys, johon äänestyslippu liittyy."
 
 msgid "Cast ballots"
-msgstr ""
+msgstr "Osallistutut äänestykset"
 
 msgid "Click to expand/collapse"
 msgstr "Laajenna/supista"
@@ -96,11 +102,16 @@ msgstr "Äänestyksen luonti epäonnistui."
 msgid "Failed to join meeting."
 msgstr "Kokoukseen liittyminen epäonnistui."
 
-msgid "Failed to login."
-msgstr ""
+#, fuzzy
+msgid "Failed to participate in meeting."
+msgstr "Kokouksen luonti epäonnistui."
 
 msgid "Failed to show cast votes."
 msgstr "Annettujen äänien näyttäminen epäonnistui."
+
+#, fuzzy
+msgid "Failed to sign in."
+msgstr "Sisäänkirjautuminen epäonnistui."
 
 msgid "Fields with an asterisk (*) are mandatory"
 msgstr "Pakolliset kentät on merkitty (*)"
@@ -132,9 +143,6 @@ msgstr "Poistu kokouksesta"
 
 msgid "Left the meeting at %{time}"
 msgstr "Poistui %{time}"
-
-msgid "Login"
-msgstr ""
 
 #, fuzzy
 msgid "Manage a meeting"
@@ -189,12 +197,6 @@ msgstr "Säilytysaika"
 msgid "Meeting|Retention time days|hint"
 msgstr "Aika, jonka kokouksen tiedot säilytetään. Säilytysajan jälkeen kokouksen tiedot poistetaan automaattisesti."
 
-msgid "Meeting|Start time"
-msgstr "Aloitusaika"
-
-msgid "Meeting|Start time|hint"
-msgstr "Kokouksen aloitusaika"
-
 msgid "Name '%{name}' is already taken. Please choose another name."
 msgstr ""
 
@@ -202,6 +204,18 @@ msgid "Next"
 msgstr "Seuraava"
 
 msgid "No"
+msgstr "Ei"
+
+#, fuzzy
+msgid "No meeting information was found."
+msgstr "Ei"
+
+#, fuzzy
+msgid "No meeting information was found. Maybe it has already been removed?"
+msgstr "Ei"
+
+#, fuzzy
+msgid "No participant information was found. Maybe you have been removed from the meeting?"
 msgstr "Ei"
 
 msgid "No voting in progress."
@@ -337,6 +351,9 @@ msgstr "Ole hyvä ja syötä nimi jonka haluat näkyvän osallistujaluettelossa.
 msgid "Save"
 msgstr "Tallenna"
 
+msgid "Sign in"
+msgstr ""
+
 msgid "Submit vote"
 msgstr "Anna äänesi"
 
@@ -421,12 +438,6 @@ msgstr "Äänestys, johon vaihtoehdot kuuluu."
 msgid "Votings"
 msgstr "Äänestykset"
 
-msgid "Voting|Anonymous"
-msgstr "Suljettu äänestys"
-
-msgid "Voting|Anonymous|hint"
-msgstr "Valitse, jos kyseessä suljettu äänestys."
-
 msgid "Voting|End time"
 msgstr "Päättymisaika"
 
@@ -444,6 +455,10 @@ msgstr "Äänestysvaihtoehdot"
 
 #, fuzzy
 msgid "Voting|Secret"
+msgstr "Äänestys"
+
+#, fuzzy
+msgid "Voting|Secret|hint"
 msgstr "Äänestys"
 
 msgid "Voting|Start time"
@@ -473,6 +488,9 @@ msgstr "Sinulla ei ole oikeutta osallistua käynnissä olevaan äänestykseen."
 msgid "You are not authorized to access the requested page or feature."
 msgstr "Sinulla ei ole pääsyä tähän toimintoon."
 
+msgid "You can only delete participants that have not cast any votes."
+msgstr ""
+
 msgid "You do not have permission access the requested page or feature."
 msgstr "Sinulla ei ole pääsyä pyydettyyn sivuun tai toimintoon."
 
@@ -486,7 +504,7 @@ msgid "You have left the meeting."
 msgstr "Olet poistunut kokouksesta."
 
 msgid "errors.models.participant.attributes.name.blank"
-msgstr ""
+msgstr "Nimi ei voi olla tyhjä"
 
 msgid "logout"
 msgstr ""
@@ -500,11 +518,5 @@ msgstr "tallenna"
 msgid "single_choice"
 msgstr ""
 
-#~ msgid "Cast ballots"
-#~ msgstr "Annetut äänet"
-#~ msgid ""
-#~ "Identify yourself to the meeting organiser by passing this code to them for va"
-#~ "lidation: %{code}"
-#~ msgstr ""
-#~ "Tunnista itsesi kokouksen järjestäjälle välittämällä heille tämä koodi: %{code"
-#~ "}"
+#~ msgid "Failed to login."
+#~ msgstr "Sisäänkirjautuminen epäonnistui."

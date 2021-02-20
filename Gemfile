@@ -27,7 +27,6 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'caxlsx_rails', '>=0.4.0'
 gem 'scrypt'
-gem 'bootstrap', '~> 4.4.1'
 
 gem "gettext_i18n_rails"
 gem 'gettext'

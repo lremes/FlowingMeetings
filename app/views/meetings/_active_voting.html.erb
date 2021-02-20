@@ -12,6 +12,7 @@
     <h4 class="mt-2"><%= _('VotingOptions') %></h4>
     <div class="card p-2">
         <%= form_with url: submit_vote_path() do |f| %>
+        <input type="hidden" name="vote[option_ids][]" value="">
         <div class="voting-options">
         <%= render partial: 'voting_options', collection: @meeting.active_voting.voting_options %>
         </div>

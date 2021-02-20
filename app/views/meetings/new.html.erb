@@ -2,14 +2,18 @@
 <%= semantic_form_for(@meeting, url: create_meeting_path(), authenticity_token: true) do |f| %>
 	<%= render partial: 'layouts/form_guide' %>
 	<%= f.semantic_errors :meeting %>
-	<%= f.input :name %>
+	<%= f.input :name, placeholder: false %>
 	<%= f.submit _('Save') %>
 <% end %>
 
 <hr>
 <h1><%= _('Manage a meeting') %></h1>
+<% if flash[:error].present? %>
+<div class="border-rounded text-danger p-1"><%= flash[:error] %></div>
+<% end %>
+
 <%= form_with url: admin_login_path(), authenticity_token: true do |f| %>
 	<%= render partial: 'layouts/form_guide' %>
-	<%= f.text_field :meeting_password %>
-	<%= f.submit _('Login') %>
+	<%= f.label _('Meeting|Admin password') -%> <%= f.text_field :meeting_password %>
+	<%= f.submit _('Sign in') %>
 <% end %>
