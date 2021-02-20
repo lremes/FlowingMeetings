@@ -13,7 +13,7 @@ else
 end
 FastGettext.default_text_domain = 'app'
 FastGettext.default_available_locales = [ 'en', 'fi' ] # Rails.application.config.i18n.available_locales
-FastGettext.default_locale = 'en' # Rails.application.config.i18n.default_locale
+FastGettext.default_locale = 'fi' # Rails.application.config.i18n.default_locale
 
 #I18n.enforce_available_locales = false
 #I18n.default_locale = Rails.application.config.i18n.default_locale
