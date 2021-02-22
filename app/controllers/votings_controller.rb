@@ -45,11 +45,41 @@ class VotingsController < ApplicationController
     end
   end
 
+  def add_default_options
+    respond_to do |format|
+      format.html {
+        begin
+          get_voting()
+          [ 'For', 'Against', 'Empty' ].each do |opt_name|
+            voting_option = VotingOption.new(text: _(opt_name))
+            voting_option.voting = @voting
+            voting_option.save!
+          end
+
+          redirect_to edit_voting_path(@voting.id) and return
+        rescue => ex
+          handle_exception(request, ex, _('Failed to create voting.'))
+          render action: 'edit' and return
+        end
+      }
+    end
+  end
+
   def destroy
     respond_to do |format|
       format.js {
         get_voting()
         @voting.destroy! if @voting.present?
+      }
+    end
+  end
+
+  def destroy_option
+    respond_to do |format|
+      format.js {
+        get_voting()
+        get_voting_option()
+        @voting_option.destroy! if @voting_option.present?
       }
     end
   end
@@ -94,6 +124,10 @@ class VotingsController < ApplicationController
   def get_voting
     get_meeting()
     @voting = @meeting.votings.where(id: params[:voting_id]).first
+  end
+
+  def get_voting_option
+    @voting_option = @voting.voting_options.where(id: params[:option_id]).first
   end
 
   def voting_params

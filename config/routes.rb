@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   delete 'admin/votings/:voting_id', to: "votings#destroy", as: 'destroy_voting'
 
   post   'admin/votings/:voting_id/options', to: "votings#create_option", as: 'create_voting_option'
+  post   'admin/votings/:voting_id/defaults', to: "votings#add_default_options", as: 'add_default_voting_option'
   patch  'admin/votings/:voting_id/options/:option_id', to: "votings#update_option", as: 'update_voting_option'
   delete 'admin/votings/:voting_id/options/:option_id', to: "votings#destroy_option", as: 'destroy_voting_option'
 
