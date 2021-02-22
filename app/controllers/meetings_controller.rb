@@ -177,6 +177,14 @@ class MeetingsController < ApplicationController
     respond_to do |format|
       format.html {
         begin
+          if (session[:meeting_password].present?)
+            redirect_to manage_meeting_path() and return
+          end
+  
+          if (session[:participating_meeting_id].present?)
+            redirect_to participate_path() and return
+          end
+  
           if params[:meeting_code].present?
             @meeting = Meeting.where(passcode: params[:meeting_code]).first
 
