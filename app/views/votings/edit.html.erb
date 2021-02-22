@@ -9,7 +9,7 @@
 <% end %>
 
 <h2><%= _('Voting|Options') %></h2>
-<div class="mt-2 mb-2"><%= link_to _('Add For/Against/Empty options'), add_default_voting_option_path(@voting.id), method: :post %></div>
+<div class="mt-2 mb-2"><%= link_to _('Add For/Against/Abstain options'), add_default_voting_option_path(@voting.id), method: :post %></div>
 
 <%= semantic_form_for(@voting_option, url: create_voting_option_path(@voting.id), authenticity_token: true) do |f| %>
 	<%= render partial: 'layouts/form_guide' %>

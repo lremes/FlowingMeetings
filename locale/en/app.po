@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-02-22 20:04+0200\n"
+"PO-Revision-Date: 2021-02-22 20:10+0200\n"
 "Language-Team: English\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -18,11 +18,17 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 "POT-Creation-Date: \n"
 
-msgid "Add For/Against/Empty options"
-msgstr "Add For/Against/Empty options"
+msgid "Abstain"
+msgstr "Abstain"
+
+msgid "Add For/Against/Abstain options"
+msgstr "Add For/Against/Abstain options"
 
 msgid "Add new voting"
 msgstr "Add new voting"
+
+msgid "Against"
+msgstr "Against"
 
 msgid "Anonymous"
 msgstr "Anonymous"
@@ -125,6 +131,9 @@ msgstr "Failed to sign in."
 
 msgid "Fields with an asterisk (*) are mandatory"
 msgstr "Fields with an asterisk (*) are mandatory"
+
+msgid "For"
+msgstr "For"
 
 msgid "Forbidden"
 msgstr "Forbidden"

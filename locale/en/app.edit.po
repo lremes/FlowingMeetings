@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-02-20 16:04+0200\n"
+"PO-Revision-Date: 2021-02-22 20:10+0200\n"
 "Language-Team: English\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -16,13 +16,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Lars Remes <lars.remes@lawly.fi>\n"
 "X-Generator: Poedit 2.4.2\n"
-"POT-Creation-Date: 2021-02-22 20:04+0200\n"
+"POT-Creation-Date: 2021-02-22 20:10+0200\n"
 
-msgid "Add For/Against/Empty options"
+msgid "Abstain"
 msgstr ""
+
+#, fuzzy
+msgid "Add For/Against/Abstain options"
+msgstr "Add For/Against/Abstain options"
 
 msgid "Add new voting"
 msgstr "Add new voting"
+
+msgid "Against"
+msgstr "Against"
 
 msgid "Anonymous"
 msgstr "Anonymous"
@@ -30,9 +37,8 @@ msgstr "Anonymous"
 msgid "Are you sure you want delete this meeting?"
 msgstr "Are you sure you want delete this meeting?"
 
-#, fuzzy
 msgid "Are you sure you want to delete the option?"
-msgstr "Are you sure you want to delete the voting?"
+msgstr "Are you sure you want to delete the option?"
 
 msgid "Are you sure you want to delete the voting?"
 msgstr "Are you sure you want to delete the voting?"
@@ -126,6 +132,9 @@ msgstr "Failed to sign in."
 
 msgid "Fields with an asterisk (*) are mandatory"
 msgstr "Fields with an asterisk (*) are mandatory"
+
+msgid "For"
+msgstr "For"
 
 msgid "Forbidden"
 msgstr "Forbidden"
@@ -534,3 +543,9 @@ msgstr "save"
 
 msgid "single_choice"
 msgstr "Single choice"
+
+#~ msgid "Add For/Against/Empty options"
+#~ msgstr "Add For/Against/Abstain options"
+
+#~ msgid "Empty"
+#~ msgstr "Abstain"

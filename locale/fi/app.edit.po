@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-02-20 16:03+0200\n"
+"PO-Revision-Date: 2021-02-22 20:08+0200\n"
 "Language-Team: Finnish\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -16,13 +16,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Lars Remes <lars.remes@lawly.fi>\n"
 "X-Generator: Poedit 2.4.2\n"
-"POT-Creation-Date: 2021-02-22 20:04+0200\n"
+"POT-Creation-Date: 2021-02-22 20:10+0200\n"
 
-msgid "Add For/Against/Empty options"
+msgid "Abstain"
 msgstr ""
+
+#, fuzzy
+msgid "Add For/Against/Abstain options"
+msgstr "Lisää Puolesta/Vastaan/Tyhjää vaihtoehdot"
 
 msgid "Add new voting"
 msgstr "Lisää äänestys"
+
+msgid "Against"
+msgstr "Vastaan"
 
 msgid "Anonymous"
 msgstr "Suljettu äänestys"
@@ -30,9 +37,8 @@ msgstr "Suljettu äänestys"
 msgid "Are you sure you want delete this meeting?"
 msgstr "Haluatko varmasti poistaa tämän kokouksen?"
 
-#, fuzzy
 msgid "Are you sure you want to delete the option?"
-msgstr "Haluatko varmasti poistaa äänestyksen?"
+msgstr "Haluatko varmasti poistaa äänestysvaihtoehdon?"
 
 msgid "Are you sure you want to delete the voting?"
 msgstr "Haluatko varmasti poistaa äänestyksen?"
@@ -44,7 +50,7 @@ msgid "Are you sure you want to remove the participant?"
 msgstr "Haluatko varmasti poistaa osallistujan?"
 
 msgid "Are you sure you want to restart the voting? This will delete any previous votes."
-msgstr ""
+msgstr "Haluatko varmasti aloittaa äänestyksen uudelleen? Tämä poistaa kaikki aiemmin annetut äänet."
 
 msgid "Back to meeting"
 msgstr "Takaisin kokoukseen"
@@ -126,6 +132,9 @@ msgstr "Kirjautuminen epäonnistui."
 
 msgid "Fields with an asterisk (*) are mandatory"
 msgstr "Pakolliset kentät on merkitty (*)"
+
+msgid "For"
+msgstr "Puolesta"
 
 msgid "Forbidden"
 msgstr "Kielletty"
@@ -534,3 +543,9 @@ msgstr "tallenna"
 
 msgid "single_choice"
 msgstr "Valitse yksi"
+
+#~ msgid "Add For/Against/Empty options"
+#~ msgstr "Lisää Puolesta/Vastaan/Tyhjää vaihtoehdot"
+
+#~ msgid "Empty"
+#~ msgstr "Tyhjää"

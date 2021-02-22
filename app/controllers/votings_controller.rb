@@ -50,7 +50,7 @@ class VotingsController < ApplicationController
       format.html {
         begin
           get_voting()
-          [ 'For', 'Against', 'Empty' ].each do |opt_name|
+          [ N_('For'), N_('Against'), N_('Abstain') ].each do |opt_name|
             voting_option = VotingOption.new(text: _(opt_name))
             voting_option.voting = @voting
             voting_option.save!
