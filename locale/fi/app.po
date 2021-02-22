@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-02-20 16:03+0200\n"
+"PO-Revision-Date: 2021-02-22 20:05+0200\n"
 "Language-Team: Finnish\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,9 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 "POT-Creation-Date: \n"
 
+msgid "Add For/Against/Empty options"
+msgstr "Lisää Puolesta/Vastaan/Tyhjää vaihtoehdot"
+
 msgid "Add new voting"
 msgstr "Lisää äänestys"
 
@@ -26,6 +29,9 @@ msgstr "Suljettu äänestys"
 
 msgid "Are you sure you want delete this meeting?"
 msgstr "Haluatko varmasti poistaa tämän kokouksen?"
+
+msgid "Are you sure you want to delete the option?"
+msgstr "Haluatko varmasti poistaa äänestysvaihtoehdon?"
 
 msgid "Are you sure you want to delete the voting?"
 msgstr "Haluatko varmasti poistaa äänestyksen?"
@@ -37,7 +43,7 @@ msgid "Are you sure you want to remove the participant?"
 msgstr "Haluatko varmasti poistaa osallistujan?"
 
 msgid "Are you sure you want to restart the voting? This will delete any previous votes."
-msgstr ""
+msgstr "Haluatko varmasti aloittaa äänestyksen uudelleen? Tämä poistaa kaikki aiemmin annetut äänet."
 
 msgid "Back to meeting"
 msgstr "Takaisin kokoukseen"
