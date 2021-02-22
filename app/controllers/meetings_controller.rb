@@ -393,6 +393,7 @@ class MeetingsController < ApplicationController
     raise _('You are not signed in into a meeting.') if session[:meeting_id].blank?
     @meeting = Meeting.find_by_id(session[:meeting_id])
     if @meeting.nil? 
+      session.delete(:meeting_id)
       flash[:warning] = _('Meeting not found.')
       not_found #redirect_to join_meeting_path() and return
     end
@@ -400,6 +401,9 @@ class MeetingsController < ApplicationController
 
   def get_participating_meeting
     @meeting = Meeting.find_by_id(session[:participating_meeting_id])
+    if @meeting.nil?
+      session.delete(:participating_meeting_id)
+    end
   end
 
   def meeting_params
