@@ -27,11 +27,16 @@ class MeetingsController < ApplicationController
       format.html {
         begin
           @meeting = Meeting.find_by_admin_password(params[:meeting_password])
+          if @meeting.nil?
+            flash[:error] = _('Meeting not found.')
+            not_found #redirect_to join_meeting_path() and return      
+          end
           session[:meeting_id] = @meeting.id
 
           redirect_to manage_meeting_path()
         rescue => ex
           handle_exception(request, ex, _('Failed to sign in.'))
+          @meeting = Meeting.new
           render action: 'new' and return
         end
       }

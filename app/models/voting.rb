@@ -7,6 +7,7 @@ class Voting < ApplicationRecord
     has_many :voting_options, dependent: :destroy
 
     validates :text, presence: true
+    validates :voting_type, presence: true
 
     enum voting_type: { single_choice: 0, multiple_choice: 1 }
 
