@@ -60,10 +60,19 @@ App.cable.subscriptions.create(
           url: '<%= meeting_votings_list_path() -%>'
         })
         break;
+      case 'participant_rejoined':
+        $.ajax({
+          method: 'GET',
+          dataType: 'script',
+          url: '<%= meeting_votings_list_path() -%>'
+        })
+        break;
       default:
         console.log('Unsupported message:', data);
       }
     }
   }
 );
+
+$('[data-toggle="tooltip"]').tooltip();
 </script>

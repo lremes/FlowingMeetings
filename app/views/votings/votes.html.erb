@@ -1,5 +1,14 @@
-<h1><%= _('Submitted votes') %></h1>
+<% missing = @voting.ballots.select { |b| b.submitted? == false } -%>
+<% if missing.present? %>
+<h1><%= _('Missing ballots') %></h1>
+<ul>
+<% missing.select .each do |b| %>
+<li><%= b.participant.name %></li>
+<% end %>
+</ul>
+<% end %>
 
+<h1><%= _('Submitted votes') %></h1>
 <table class="table">
 <thead>
 <th><%= _('Votes') %></th>
@@ -11,13 +20,4 @@
 </tbody>
 </table>
 
-<% missing = @voting.ballots.select { |b| b.submitted? == false } -%>
-<% if missing.present? %>
-<h2><%= _('Missing ballots') %></h2>
-<ul>
-<% missing.select .each do |b| %>
-<li><%= b.participant.name %></li>
-<% end %>
-</ul>
-<% end %>
 <%= link_to _('Back to meeting'), manage_meeting_path() %>

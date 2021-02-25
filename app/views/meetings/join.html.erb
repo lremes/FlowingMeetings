@@ -1,13 +1,23 @@
+<% flash.each do |type, msg| %>
+<div class="border rounded p-2 text-danger mb-4">
+  <%= msg %>
+</div>
+<% end %>
+
 <h1><%= _('Join a meeting') %></h1>
-<%= form_with url: enter_meeting_path() do |form| %>
-  <% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-  <% end %>
+<%= form_with url: enter_meeting_path(), class: 'mb-2' do |form| %>
   <%= form.label :meeting_code, _('Please enter meeting code') %>
   <%= form.text_field :meeting_code %>
 <%= submit_tag _('Join meeting') %>  
 <% end %>
 
 <%= link_to _('Create a new meeting'), new_meeting_path() %>
+
+<hr>
+<h1><%= _('Rejoin a meeting') %></h1>
+<%= _('Did you drop out of a meeting? Enter your personal rejoining code here. You can get it from the meeting organiser.') %>
+<%= form_with url: rejoin_meeting_path() do |form| %>
+  <%= form.label :meeting_code, _('Please enter rejoining code') %>
+  <%= form.text_field :rejoin_code %>
+<%= submit_tag _('Return to meeting') %>  
+<% end %>

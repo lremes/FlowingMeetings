@@ -13,8 +13,10 @@ class Tally
     end
 
     def percentage(total)
+        Rails.logger.debug(self.inspect)
+        Rails.logger.debug(total)
         return 'N/A' if total <= 0
-        (self.votes / total) * 100.0
+        (self.votes.to_f / total.to_f) * 100.0
     end
 
     def add(vote, amount)

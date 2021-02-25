@@ -2,12 +2,14 @@
     <div class="card-header">
         <div class="caret d-flex justify-content-between" data-target="#participant-<%= participant.id %>" data-toggle="collapse" aria-expanded="false" role="button" title="<%= _('Click to expand/collapse') %>">
             <div class="mr-auto pr-2"><%= sanitize participant.name %></div>
-            <% if not participant.permitted? %>
-            <div class="mr-4"><%= sanitize participant.token %></div>
-            <% end %>
             <% if participant.time_of_leaving.present? %>
             <div class="mr-2"><%= _('Left the meeting at %{time}') % { time: participant.time_of_leaving } %></div>
             <% else %>
+            <% if not participant.permitted? %>
+            <div class="mr-4" title="<%= _('Joining code') -%>" data-toggle="tooltip"><%= fa_icon('sign-in-alt') -%> <%= sanitize participant.token %></div>
+            <% else %>
+            <div class="mr-4" title="<%= _('Rejoining code') -%>" data-toggle="tooltip"><%= fa_icon('redo-alt') -%> <%= sanitize participant.rejoin_code %></div>
+            <% end %>
             <div class="mr-4">
             <%= form_tag update_participant_path(participant.id), remote: true, method: :patch, authenticity_token: true do %>
             <%= _('Votes') %>

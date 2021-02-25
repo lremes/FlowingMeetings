@@ -31,6 +31,7 @@ class Voting < ApplicationRecord
                 end
             end
         end
+        logger.debug(tallies.inspect)
         [ tallies, total ]
     end
 end

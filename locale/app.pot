@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-22 20:10+0200\n"
-"PO-Revision-Date: 2021-02-22 20:10+0200\n"
+"POT-Creation-Date: 2021-02-25 22:55+0200\n"
+"PO-Revision-Date: 2021-02-25 22:55+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -90,7 +90,13 @@ msgstr ""
 msgid "Create a new voting"
 msgstr ""
 
+msgid "Create meeting"
+msgstr ""
+
 msgid "Delete meeting"
+msgstr ""
+
+msgid "Did you drop out of a meeting? Enter your personal rejoining code here. You can get it from the meeting organiser."
 msgstr ""
 
 msgid "Edit voting"
@@ -154,6 +160,12 @@ msgid "Join a meeting"
 msgstr ""
 
 msgid "Join meeting"
+msgstr ""
+
+msgid "Joined meeting as '%{name}'"
+msgstr ""
+
+msgid "Joining code"
 msgstr ""
 
 msgid "Leave meeting"
@@ -351,6 +363,12 @@ msgstr ""
 msgid "Participant|Permitted|hint"
 msgstr ""
 
+msgid "Participant|Rejoin code"
+msgstr ""
+
+msgid "Participant|Rejoin code|hint"
+msgstr ""
+
 msgid "Participant|Time of leaving"
 msgstr ""
 
@@ -366,7 +384,19 @@ msgstr ""
 msgid "Please enter meeting code"
 msgstr ""
 
+msgid "Please enter rejoining code"
+msgstr ""
+
 msgid "Please enter the name you would like to show in the meeting participant list."
+msgstr ""
+
+msgid "Rejoin a meeting"
+msgstr ""
+
+msgid "Rejoining code"
+msgstr ""
+
+msgid "Return to meeting"
 msgstr ""
 
 msgid "Save"
@@ -507,6 +537,9 @@ msgstr ""
 msgid "You are not allowed to participate in this vote."
 msgstr ""
 
+msgid "You are not allowed to vote in this voting."
+msgstr ""
+
 msgid "You are not authorized to access the requested page or feature."
 msgstr ""
 
@@ -517,6 +550,9 @@ msgid "You can only delete participants that have not cast any votes."
 msgstr ""
 
 msgid "You do not have permission access the requested page or feature."
+msgstr ""
+
+msgid "You have already left the meeting and cannot rejoin. You need rejoin the meeting entering the meeting code."
 msgstr ""
 
 msgid "You have already submitted your vote."

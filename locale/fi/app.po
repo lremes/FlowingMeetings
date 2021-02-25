@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-02-22 20:11+0200\n"
+"PO-Revision-Date: 2021-02-25 22:55+0200\n"
 "Language-Team: Finnish\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -90,8 +90,14 @@ msgstr "Luo uusi kokous"
 msgid "Create a new voting"
 msgstr "Lisää uusi äänestys"
 
+msgid "Create meeting"
+msgstr "Lisää kokous"
+
 msgid "Delete meeting"
 msgstr "Poista kokous"
+
+msgid "Did you drop out of a meeting? Enter your personal rejoining code here. You can get it from the meeting organiser."
+msgstr "Tipahditko linjoilta? Syötä henkilökohtainen palaamiskoodisi tähän. Saat sen kokouksen järjestäjältä."
 
 msgid "Edit voting"
 msgstr "Muokkaa äänestystä"
@@ -142,7 +148,7 @@ msgid "Identify participant"
 msgstr "Tunnista osallistuja"
 
 msgid "Identify yourself to the meeting organiser by passing this code to them for validation:"
-msgstr "Tunnistaudu kokouksen järjestäjälle välittämällä heille tämä koodi: %{code}"
+msgstr "Tunnistaudu kokouksen järjestäjälle välittämällä heille tämä koodi:"
 
 msgid "Internal server error"
 msgstr "Palvelinvirhe"
@@ -155,6 +161,12 @@ msgstr "Liity kokoukseen"
 
 msgid "Join meeting"
 msgstr "Liity kokoukseen"
+
+msgid "Joined meeting as '%{name}'"
+msgstr "Olet liittyneenä kokoukseen nimellä '%{name}'"
+
+msgid "Joining code"
+msgstr "Palaamiskoodi"
 
 msgid "Leave meeting"
 msgstr "Poistu kokouksesta"
@@ -351,6 +363,12 @@ msgstr "Sallittu"
 msgid "Participant|Permitted|hint"
 msgstr "Saako osallistuja osallistua äänestyksiin."
 
+msgid "Participant|Rejoin code"
+msgstr "Palaamiskoodi"
+
+msgid "Participant|Rejoin code|hint"
+msgstr "Tällä koodilla osallistuja voi palata kokoukseen."
+
 msgid "Participant|Time of leaving"
 msgstr "Poistumisaika"
 
@@ -366,8 +384,20 @@ msgstr "Osallistujan yksilöivä tunniste."
 msgid "Please enter meeting code"
 msgstr "Ole hyvä ja syötä pääsykoodi"
 
+msgid "Please enter rejoining code"
+msgstr "Ole hyvä ja syötä palaamiskoodi"
+
 msgid "Please enter the name you would like to show in the meeting participant list."
 msgstr "Ole hyvä ja syötä nimi jonka haluat näkyvän osallistujaluettelossa."
+
+msgid "Rejoin a meeting"
+msgstr "Palaa kokoukseen"
+
+msgid "Rejoining code"
+msgstr "Palaamiskoodi"
+
+msgid "Return to meeting"
+msgstr "Takaisin kokoukseen"
 
 msgid "Save"
 msgstr "Tallenna"
@@ -507,17 +537,23 @@ msgstr "Kyllä"
 msgid "You are not allowed to participate in this vote."
 msgstr "Sinulla ei ole oikeutta osallistua käynnissä olevaan äänestykseen."
 
+msgid "You are not allowed to vote in this voting."
+msgstr "Sinulla ei ole oikeutta osallistua käynnissä olevaan äänestykseen."
+
 msgid "You are not authorized to access the requested page or feature."
 msgstr "Sinulla ei ole pääsyä tähän toimintoon."
 
 msgid "You are not signed in into a meeting."
-msgstr ""
+msgstr "Et ole tällä hetkellä liittyneenä kokoukseen"
 
 msgid "You can only delete participants that have not cast any votes."
 msgstr "Voit poistaa vain osallistujia, jotka eivät ole äänestäneet."
 
 msgid "You do not have permission access the requested page or feature."
 msgstr "Sinulla ei ole pääsyä pyydettyyn sivuun tai toimintoon."
+
+msgid "You have already left the meeting and cannot rejoin. You need rejoin the meeting entering the meeting code."
+msgstr "Olet jo poistunut kokouksesta etkä voi enää palata siihen. Joudut liittymään kokoukseen uudelleen syöttämällä kokouksen pääsykoodi."
 
 msgid "You have already submitted your vote."
 msgstr "Olet jo antanut äänesi käynnissä olevaan äänestykseen."

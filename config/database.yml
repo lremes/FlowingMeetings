@@ -10,14 +10,11 @@ default: &default
     url: <%= Rails.application.credentials.dig(:postgres,:url) %>
     pool: <%= ENV.fetch('RAILS_DB_POOL_SIZE', 5) %>
 
-#default: &default
-#  adapter: postgres
-#  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#  timeout: 5000
-
-#development:
-#  <<: *default
-#  database: db/development.sqlite3
+development:
+  adapter: sqlite3
+  encoding: unicode
+  database: db/development.sqlite3
+  pool: 5
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

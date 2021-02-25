@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2021-02-22 20:10+0200\n"
+"PO-Revision-Date: 2021-02-25 22:56+0200\n"
 "Language-Team: English\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -90,8 +90,14 @@ msgstr "Create a new meeting"
 msgid "Create a new voting"
 msgstr "Create a new voting"
 
+msgid "Create meeting"
+msgstr "Create meeting"
+
 msgid "Delete meeting"
 msgstr "Delete meeting"
+
+msgid "Did you drop out of a meeting? Enter your personal rejoining code here. You can get it from the meeting organiser."
+msgstr "Did you drop out of a meeting? Enter your personal rejoining code here. You can get it from the meeting organiser."
 
 msgid "Edit voting"
 msgstr "Edit voting"
@@ -155,6 +161,12 @@ msgstr "Join a meeting"
 
 msgid "Join meeting"
 msgstr "Join meeting"
+
+msgid "Joined meeting as '%{name}'"
+msgstr "Joined meeting as '%{name}'"
+
+msgid "Joining code"
+msgstr "Joining code"
 
 msgid "Leave meeting"
 msgstr "Leave meeting"
@@ -351,6 +363,12 @@ msgstr "Participant|Permitted"
 msgid "Participant|Permitted|hint"
 msgstr "Participant|Permitted|hint"
 
+msgid "Participant|Rejoin code"
+msgstr "Rejoin code"
+
+msgid "Participant|Rejoin code|hint"
+msgstr "The participant can rejoin the meeting by entering this code"
+
 msgid "Participant|Time of leaving"
 msgstr "Time of leaving"
 
@@ -366,8 +384,20 @@ msgstr "Participant|Token|hint"
 msgid "Please enter meeting code"
 msgstr "Please enter meeting code"
 
+msgid "Please enter rejoining code"
+msgstr "Please enter rejoining code"
+
 msgid "Please enter the name you would like to show in the meeting participant list."
 msgstr "Please enter the name you would like to show in the meeting participant list."
+
+msgid "Rejoin a meeting"
+msgstr "Rejoin a meeting"
+
+msgid "Rejoining code"
+msgstr "Rejoining code"
+
+msgid "Return to meeting"
+msgstr "Return to meeting"
 
 msgid "Save"
 msgstr "Save"
@@ -507,6 +537,9 @@ msgstr "Yes"
 msgid "You are not allowed to participate in this vote."
 msgstr "You are not allowed to participate in this vote."
 
+msgid "You are not allowed to vote in this voting."
+msgstr "You are not allowed to vote in this voting."
+
 msgid "You are not authorized to access the requested page or feature."
 msgstr "You are not authorized to access the requested page or feature."
 
@@ -518,6 +551,9 @@ msgstr "You can only delete participants that have not cast any votes."
 
 msgid "You do not have permission access the requested page or feature."
 msgstr "You do not have permission access the requested page or feature."
+
+msgid "You have already left the meeting and cannot rejoin. You need rejoin the meeting entering the meeting code."
+msgstr "You have already left the meeting and cannot rejoin. You need rejoin the meeting entering the meeting code."
 
 msgid "You have already submitted your vote."
 msgstr "You have already submitted your vote."

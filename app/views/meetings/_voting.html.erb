@@ -4,19 +4,19 @@
             <div class="mr-auto caret" data-target="#voting-<%= voting.id %>-details" data-toggle="collapse" aria-expanded="false" role="button" title="<%= _('Click to expand/collapse') %>"><%= sanitize voting.text %></div>
             <div class="mr-4"><%= voting.ballots.submitted.count %> / <%= voting.ballots.count -%></div>
             <div class="actions">
-            <%= link_to fa_icon('edit'), edit_voting_path(voting.id) %>
+            <%= link_to fa_icon('edit'), edit_voting_path(voting.id), class: 'p-1' %>
             <% if @meeting.active_voting == voting %>
-            <%= link_to fa_icon('stop'), stop_voting_path(), data: { confirm: _('Are you sure you want to end the voting?') } %>
+            <%= link_to fa_icon('stop'), stop_voting_path(), class: 'p-1', data: { confirm: _('Are you sure you want to end the voting?') } %>
             <% else %>
             <% if voting.votes.present? %>
-            <%= link_to fa_icon('play'), start_voting_path(voting.id), data: { confirm: _('Are you sure you want to restart the voting? This will delete any previous votes.') } %>
+            <%= link_to fa_icon('play'), start_voting_path(voting.id), class: 'p-1', data: { confirm: _('Are you sure you want to restart the voting? This will delete any previous votes.') } %>
             <% else %>
-            <%= link_to fa_icon('play'), start_voting_path(voting.id) %>
+            <%= link_to fa_icon('play'), start_voting_path(voting.id), class: 'p-1' %>
             <% end %>
             <% end %>
-            <%= link_to fa_icon('trash-alt'), destroy_voting_path(voting.id), remote: true, data: { method: 'delete', confirm: _('Are you sure you want to delete the voting?') } %>
+            <%= link_to fa_icon('trash-alt'), destroy_voting_path(voting.id), remote: true, class: 'p-1', data: { method: 'delete', confirm: _('Are you sure you want to delete the voting?') } %>
             <% if voting.ballots.present? %>
-            <%= link_to fa_icon('poll'), votes_path(voting.id) %>
+            <%= link_to fa_icon('poll'), votes_path(voting.id), class: 'p-1' %>
             <% end %>
             </div>
         </div>

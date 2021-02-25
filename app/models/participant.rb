@@ -1,5 +1,4 @@
 class Participant < ApplicationRecord
-
     scope :permitted, -> { where(permitted: true) }
     belongs_to :meeting
 
@@ -10,5 +9,9 @@ class Participant < ApplicationRecord
 
     def generate_identifier
         self.token = 6.times.map{rand(10)}.join
+    end
+
+    def generate_rejoin_code
+        self.rejoin_code = 6.times.map{rand(10)}.join
     end
 end

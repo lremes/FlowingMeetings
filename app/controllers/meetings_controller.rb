@@ -229,6 +229,7 @@ class MeetingsController < ApplicationController
           end
           @participant.meeting = @meeting
           @participant.generate_identifier
+          @participant.generate_rejoin_code
           @participant.save!
 
           session[:participant_id] = @participant.id
@@ -240,6 +241,31 @@ class MeetingsController < ApplicationController
           handle_exception(request, ex, ex.message)
           render action: 'new_participant' and return
         end
+      }
+    end
+  end
+
+  def rejoin_meeting
+    respond_to do |format|
+      format.html {
+        begin
+          @participant = Participant.find_by_rejoin_code(params[:rejoin_code])
+          if @participant.present?
+            if @participant.time_of_leaving.present?
+              flash[:warning] = _('You have already left the meeting and cannot rejoin. You need rejoin the meeting entering the meeting code.')
+              redirect_to join_meeting_path() and return
+            end
+            session[:participant_id] = @participant.id
+            session[:participating_meeting_id] = @participant.meeting_id
+
+            ManagementNotificationsChannel.broadcast_to @meeting, { message: "participant_rejoined" }
+
+            redirect_to participate_path() and return
+          end
+        rescue => ex
+          handle_exception(request, ex, ex.message)
+          render action: 'join' and return
+        end          
       }
     end
   end
@@ -295,14 +321,22 @@ class MeetingsController < ApplicationController
         begin
           get_participating_meeting()
           if @meeting.blank?
+            logger.warn('No meeting information was found.')
             flash[:error] = _('No meeting information was found.')
             redirect_to join_meeting_path() and return
           end
 
           get_participant()
+          logger.debug(@participant.inspect)
           if @participant.blank?
+            logger.warn('No participant information was found.')
             flash[:error] = _('No participant information was found. Maybe you have been removed from the meeting?')
             redirect_to join_meeting_path() and return
+          else
+            if @participant.time_of_leaving.present?
+              reset_session
+              redirect_to join_meeting_path() and return
+            end
           end
 
         rescue => ex

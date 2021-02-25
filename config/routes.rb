@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post   'meetings/join', to: "meetings#join", as: 'enter_meeting'
   get    'meetings/participants/new', to: "meetings#new_participant", as: 'new_participant'
   post   'meetings/participants/', to: "meetings#add_participant", as: 'add_participant'
+  post   'meetings/participants/rejoin', to: "meetings#rejoin_meeting", as: 'rejoin_meeting'
   get    'meetings/participants/identify', to: "meetings#identify_participant", as: 'identify_participant'
   patch  'meetings/participants/:participant_id', to: "meetings#update_participant", as: 'update_participant'
   get    'meetings/participate', to: "meetings#participate", as: 'participate'
