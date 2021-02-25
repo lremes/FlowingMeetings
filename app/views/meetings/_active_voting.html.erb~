@@ -5,7 +5,7 @@
 <%= flash[:error] %>
 
 <div class="card p-2"><%= sanitize @meeting.active_voting.text %></div>
-<% @ballot = @meeting.active_voting.ballots.where(participant_id: @participant.id).first -%>
+<% ballot = @meeting.active_voting.ballots.where(participant_id: @participant.id).present? -%>
 <% if @ballot.present? -%>
     <% if @ballot.submitted == true %>
         <%= _('You have already voted. Please waith for voting to end.') %>
@@ -22,6 +22,7 @@
         </div>
     <% end %>
 <% else %>
+<%= logger.debug(ballot.inspect) %>
 <%= _('No valid ballot found.') %>
 <% end %>
 <% end %>
